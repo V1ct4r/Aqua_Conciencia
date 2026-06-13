@@ -3,29 +3,32 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <h1><span style="color: #005A8C;">Aqua</span><br><span style="color: #2E9E3E;">Conciencia</span></h1>
+        <h1><span style="color: #005A8C;">Aqua</span><br><span style="color: #2E9E3E;">Conciencia</span></h1>       <!-- Se agrega el color '005A8C' a 'Aqua' y el color '2E9E3E' a 'Coonciencia' -->
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <link rel="stylesheet" href="../../static/css/login.css">
+        <link rel="stylesheet" href="../../static/css/login.css">       <!-- Se agrega el link para 'login.css' para desde ese archivo poder ordenar y agregar colores para la pagina -->
     </head>
 
 <body>
     <header>
         <div class="encabezado">
-            <img src="logo_aqua.png" alt="Logo" class="logo">
+            <img src="logo_aqua.png" alt="Logo" class="logo">   <!-- Se agrega logo de 'Aquaconciencia' -->
         </div>
     </header>
 
     <section>
         <p>Nombre de usuario</p>
-        <input type="text">
+        <input type="text">     <!-- Se pide que el usuario ingrese su 'Nombre de usuario' -->
 
         <p>Contraseña</p>
-        <input type="password"> 
+        <input type="password">     <!-- Se pide que el usuario ingrese 'Contraseña' y que al ingresar su contraseña esta de censure con '°' (pero en negrita) -->
 
-        <button>Iniciar sesion</button>
-        <button>Crear una cuenta</button>
-        <button class="boton-restablecer">Reestablecer contraseña</button>
+        <button>Iniciar sesion</button>       <!-- Se crea un boton llamado 'Inicar sesion' -->
+        <button>Crear una cuenta</button>       <!-- Se crea boton llamado 'Crear una cuenta' -->   
+        <button class="boton-restablecer">Reestablecer contraseña</button>      <!-- Se crea boton llamado 'Resteblecer contraseña', pero este contando con un identificador llamado 'boton-restablecer', para en 'CSS' hacerle un diseño diferente a los demas 'Button' -->                   
+
     </section>
+
+    <script src="../../static/js/login.js"></script>        <!-- Se crea link del 'login.js' para desde ese archivo agregar el 'eye icon' y que asi el usuario si desea pueda apreciar lo que esta escribiendo en 'Contraseña' -->
     
 </body>
 </html>
