@@ -98,10 +98,10 @@ button:hover{
     left: -200px; /* mueve todo hacia la izquierda */
 }
 
-button:last-child{
-    background-color: #008CBA;
-}
-
-button:last-child:hover{
-    background-color: #0074a0;
+.boton-restablecer {
+    background-color: transparent;
+    color: #005A8C;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
 }
