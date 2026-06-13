@@ -4,46 +4,104 @@ body{
     font-family: Arial, sans-serif;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+
+    min-height: 100vh;
 }
 
-section{
-    section{
-    width: 500px;
-    text-align: center;
-}
+/* Logo + titulo */
+.encabezado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    margin-bottom: 50px;
 }
 
+/* Logo */
+.logo{
+    width: 220px !important;
+    height: auto;
+
+    
+}
+
+/* Aqua Conciencia */
 h1{
-    margin: 5px 0;
+    margin: 0;
     color: #1b5e20;
-    font-size: 24px;
+    font-size: 72px;
+    font-weight: bold;
+    line-height: 0.9;
+    font-family: Arial, sans-serif;
 }
 
-h2{
-    margin: 0 0 20px 0;
-    color: #1b5e20;
-    font-size: 18px;
+/* Formulario */
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Etiquetas */
+p{
+    width: 600px;
+    margin: 10px 0 5px 0;
+    font-size: 20px;
+    color: #000;
+}
+
+/* Cajas de texto */
 input{
-    width: 350px;
-    padding: 12px;
-    margin: 10px 0 20px 0;
-    border: 2px solid #2a8db0;
-    border-radius: 5px;
+    width: 600px;
+    padding: 15px;
+    margin-bottom: 30px;
+
+    border: 1px solid #999;
+    border-radius: 4px;
+
+    font-size: 18px;
+    box-sizing: border-box;
 }
 
+/* Botones */
 button{
-    display: block;
-    width: 220px;
-    padding: 12px;
-    margin: 20px auto;
-    background-color: #4CAF50;
+    width: 240px;
+    padding: 15px;
+    margin: 8px 0;
+
+    background-color: #62d132;
     color: white;
+
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
+
+    font-size: 20px;
+    cursor: pointer;
 }
- 
+
+button:hover{
+    background-color: #52b829;
+}
+.encabezado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+    margin-bottom: 40px;
+
+    position: relative;
+    left: -200px; /* mueve todo hacia la izquierda */
+}
+
+button:last-child{
+    background-color: #008CBA;
+}
+
+button:last-child:hover{
+    background-color: #0074a0;
+}
