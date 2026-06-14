@@ -1,0 +1,135 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+
+    <link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+</head>
+<body>
+
+<div class="contenedor">
+
+    <header>
+
+        <div class="logo">
+
+    <img src="{% static 'css/logo.png' %}" alt="">
+
+    <div class="texto-logo">
+        <h1>Aqua</h1>
+        <h1>Conciencia</h1>
+    </div>
+
+</div>
+
+        <nav class="menu">
+            <a href="{% url 'panel' %}">Mapa</a>
+            <a href="#">Quiz</a>
+            <a href="#">Curiosidades</a>
+            <a href="#">Ayuda</a>
+        </nav>
+
+        <div class="iconos">
+
+            <a href="{% url 'panel' %}">
+                <img src="{% static 'css/logo.casa.png' %}" alt="">
+            </a>
+
+            <a href="{% url 'perfil' %}">
+                <img src="{% static 'css/logo.usuario.png' %}" alt="">
+            </a>
+
+        </div>
+
+    </header>
+
+    <div class="perfil-layout">
+
+        <div class="perfil-principal">
+
+            <h1>Usuario</h1>
+
+            <div class="usuario-top">
+
+                <div class="foto-usuario">
+                    <img src="{% static 'css/logo.usuario.png' %}" alt="">
+                </div>
+
+                <div class="nombre-box">
+                    Angel_example
+                </div>
+
+            </div>
+
+            <hr>
+
+            <div class="datos">
+
+                <h3>Información de la cuenta</h3>
+
+                <p><strong>Correo electrónico</strong></p>
+
+                <input
+                    type="text"
+                    value="aquaconciencia@example.com"
+                    readonly
+                >
+
+                <p class="tiempo">
+                    Tiempo activo en la cuenta<br>
+                    XX : XX : XX
+                </p>
+
+            </div>
+
+            <div class="acciones">
+
+                <button class="btn-verde">
+                    Cerrar sesión
+                </button>
+
+                <button class="btn-verde">
+                    Borrar cuenta
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="progreso-panel">
+
+            <div class="nivel">
+
+                <div class="medalla"></div>
+
+                <h3>Etapa 1: Ayudante</h3>
+
+            </div>
+
+            <div class="barra">
+                <div class="relleno"></div>
+            </div>
+
+            <div class="etapas">
+
+                <div class="circulo"></div>
+                <div class="circulo"></div>
+                <div class="circulo"></div>
+                <div class="circulo"></div>
+
+            </div>
+
+            <p>1 → 3 → 5 → Max</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

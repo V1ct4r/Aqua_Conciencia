@@ -11,40 +11,73 @@
 </head>
 <body>
 
-<header>
-    <div class="logo">AquaConciencia</div>
-
-    <nav class="menu">
-        <a href="#">Inicio</a>
-        <a href="#">Noticias</a>
-        <a href="#">Foro</a>
-        <a href="#">Perfil</a>
-        <a href="#">Configuración</a>
-    </nav>
-</header>
-
 <div class="contenedor">
+
+    <header>
+
+        <div class="logo">
+            <img src="{% static 'css/logo.png' %}" alt="Logo AquaConciencia">
+
+            <div class="texto-logo">
+                <h1>Aqua</h1>
+                <h1>Conciencia</h1>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <a href="{% url 'panel' %}">Mapa</a>
+            <a href="#">Quiz</a>
+            <a href="#">Curiosidades</a>
+            <a href="#">Ayuda</a>
+        </nav>
+
+        <div class="iconos">
+
+            <a href="{% url 'panel' %}">
+                <img src="{% static 'css/logo.casa.png' %}" alt="Inicio">
+            </a>
+
+            <a href="{% url 'perfil' %}">
+                <img src="{% static 'css/logo.usuario.png' %}" alt="Usuario">
+            </a>
+
+        </div>
+
+    </header>
 
     <div class="dashboard">
 
-        <!-- COLUMNA IZQUIERDA -->
+        <!-- IZQUIERDA -->
         <div class="principal">
 
-            <h2 class="titulo-mapa">
-                Mapa Interactivo del Archipiélago de Chiloé
-            </h2>
+            <div class="mapa">
 
-            <img
-                src="{% static 'css/mapa_chiloe_nuevo.jpeg' %}"
-                alt="Mapa de Chiloé"
-                class="imagen-mapa"
-            >
+                <img
+                    src="{% static 'css/mapa_chiloe_nuevo.jpeg' %}"
+                    alt="Mapa de Chiloé"
+                    class="imagen-mapa"
+                >
+
+            </div>
 
             <div class="accesos">
-                <div class="acceso">Noticias</div>
-                <div class="acceso">Foro</div>
-                <div class="acceso">Educación Ambiental</div>
-                <div class="acceso">Actividades</div>
+
+                <a href="{% url 'noticias' %}" class="acceso">
+                    Noticias
+                </a>
+
+                <a href="{% url 'foro' %}" class="acceso">
+                    Foro
+                </a>
+
+                <a href="#" class="acceso">
+                    Educación Ambiental
+                </a>
+
+                <a href="#" class="acceso">
+                    Actividades
+                </a>
+
             </div>
 
         </div>
@@ -53,18 +86,24 @@
         <div class="sidebar">
 
             <div class="progreso">
-                0%
+                <h3>0%</h3>
             </div>
 
             <div class="info">
-                <h3>Información</h3>
 
-                <p>
-                    Selecciona una comuna del mapa para visualizar
-                    información relacionada con la contaminación
-                    ambiental y la conservación de los ecosistemas
-                    del Archipiélago de Chiloé.
-                </p>
+                <div>
+
+                    <h3>Información</h3>
+
+                    <p>
+                        Selecciona una comuna del mapa para visualizar
+                        información relacionada con la contaminación
+                        ambiental y la conservación de los ecosistemas
+                        del Archipiélago de Chiloé.
+                    </p>
+
+                </div>
+
             </div>
 
         </div>
