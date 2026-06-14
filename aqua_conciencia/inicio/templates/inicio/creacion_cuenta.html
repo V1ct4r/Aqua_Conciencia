@@ -1,69 +1,55 @@
-<!DOCTYPE html>
-<html lang="es">
+{% load static %}
+
+<!DOCTYPE html><html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta - Aqua Conciencia</title><link rel="stylesheet" href="{% static 'css/creacion_cuenta.css' %}">
 
-    <title>Crear Cuenta - Aqua Conciencia</title>
-
-    <link rel="stylesheet" href="../../static/css/creacion_cuenta.css">
 </head>
+<body><div class="registro-container"><div class="registro-card">
 
-<body>
+    <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">
 
-    <header>
+    <h1 class="titulo">
+        <span class="azul">Aqua</span><br>
+        <span class="verde">Conciencia</span>
+    </h1>
 
-        <h1>
-            <span style="color:#005A8C;">Aqua</span><br>
-            <span style="color:#2E9E3E;">Conciencia</span>
-        </h1>
+    <form method="POST">
+        {% csrf_token %}
 
-        <div class="encabezado">
-            <img src="../../static/logo.png" alt="Logo" class="logo">
-        </div>
+        <label>Correo Electrónico</label>
+        <input
+            type="email"
+            name="correo"
+            placeholder="aquaconciencia@example.com"
+            required
+        >
 
-    </header>
+        <label>Nombre de usuario</label>
+        <input
+            type="text"
+            name="usuario"
+            placeholder="Angel_example"
+            required
+        >
 
-    <section>
+        <label>Contraseña</label>
+        <input
+            type="password"
+            name="password"
+            placeholder="1234567890"
+            required
+        >
 
-        <h2>Crear Cuenta</h2>
+        <button type="submit" class="btn-crear">
+            Crear cuenta
+        </button>
 
-        <form method="POST">
-            {% csrf_token %}
+    </form>
 
-            <p>Correo Electrónico</p>
-            <input
-                type="email"
-                name="correo"
-                placeholder="Ingrese su correo"
-                required
-            >
+</div>
 
-            <p>Nombre de usuario</p>
-            <input
-                type="text"
-                name="usuario"
-                placeholder="Ingrese su usuario"
-                required
-            >
-
-            <p>Contraseña</p>
-            <input
-                type="password"
-                name="password"
-                placeholder="Ingrese su contraseña"
-                required
-            >
-
-            <br>
-
-            <button type="submit">
-                Crear cuenta
-            </button>
-
-        </form>
-
-    </section>
-
-</body>
+</div></body>
 </html>

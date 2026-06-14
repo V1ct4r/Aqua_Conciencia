@@ -1,28 +1,54 @@
-<!DOCTYPE HTML>
+{% load static %}
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <h1><span style="color: #005A8C;">Aqua</span><br><span style="color: #2E9E3E;">Conciencia</span></h1>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <link rel="stylesheet" href="../../static/css/restablecer_contraseña.css">
-    </head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restablecer Contraseña - Aqua Conciencia</title>
+
+    <link rel="stylesheet" href="{% static 'css/creacion_cuenta.css' %}">
+</head>
 
 <body>
-    <header>
-        <div class="encabezado">
-            <img src="logo_aqua.png" alt="Logo" class="logo">
-        </div>
-    </header>
 
-    <section>
-        <h2>Restablecer contraseña</h2>
-        <p>Para restablecer la contraseña porfavor ingresar su correo electronico para recibir mas instrucciones</p>
-        <p>Correo electronico</p>
-        <input type="email">
-        <button>Continuar</button>
-    </section>
+    <div class="registro-card">
+
+        <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">
+
+        <h1 class="titulo">
+            <span class="azul">Aqua</span><br>
+            <span class="verde">Conciencia</span>
+        </h1>
+
+        <h2>Restablecer Contraseña</h2>
+
+        <p style="text-align:center; margin-bottom:25px;">
+            Ingresa el correo electrónico asociado 
+        a tu cuenta. 
+            Recibirás un enlace para crear una 
+        nueva contraseña.
+        </p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label>Correo Electrónico</label>
+
+            <input
+                type="email"
+                name="correo"
+                placeholder="aquaconciencia@example.com"
+                required
+            >
+
+            <button type="submit" class="btn-crear">
+                Continuar
+            </button>
+
+        </form>
+
+    </div>
+
 </body>
-
-
 </html>
