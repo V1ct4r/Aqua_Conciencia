@@ -1,0 +1,266 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#39c7e8;
+min-height:100vh;
+padding:20px;
+}
+
+/* CONTENEDOR GENERAL */
+
+.contenedor{
+max-width:1400px;
+margin:auto;
+background:#46d4f2;
+border-radius:20px;
+padding:25px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+border:2px solid black;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+}
+
+/* LOGO */
+
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo img{
+width:130px;
+height:130px;
+object-fit:contain;
+}
+
+.texto-logo{
+color:#0050a0;
+font-weight:bold;
+line-height:1;
+}
+
+.texto-logo h1{
+font-size:24px;
+}
+
+/* MENU */
+
+.menu{
+background:#005db5;
+padding:15px 30px;
+border-radius:12px;
+display:flex;
+gap:25px;
+border:2px solid black;
+}
+
+.menu a{
+text-decoration:none;
+background:#8adf43;
+color:white;
+font-weight:bold;
+padding:10px 25px;
+border-radius:12px;
+transition:0.3s;
+border:2px solid black;
+}
+
+.menu a:hover{
+transform:scale(1.05);
+}
+
+/* ICONOS */
+
+.iconos{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.iconos img{
+width:55px;
+height:55px;
+object-fit:contain;
+background:white;
+border-radius:50%;
+padding:8px;
+cursor:pointer;
+transition:0.3s;
+border:2px solid black;
+}
+
+.iconos img:hover{
+transform:scale(1.1);
+}
+
+/* DASHBOARD */
+
+.dashboard{
+display:flex;
+gap:25px;
+}
+
+/* IZQUIERDA */
+
+.principal{
+flex:4;
+}
+
+/* MAPA */
+
+.mapa{
+background:white;
+border-radius:20px;
+padding:20px;
+border:2px solid black;
+}
+
+.imagen-mapa{
+width:100%;
+height:550px;
+object-fit:contain;
+display:block;
+}
+
+/* BOTONES INFERIORES */
+
+.accesos{
+margin-top:20px;
+background:#005db5;
+padding:20px;
+border-radius:12px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+border:2px solid black;
+}
+
+.acceso{
+height:70px;
+background:#8adf43;
+border-radius:12px;
+display:flex;
+justify-content:center;
+align-items:center;
+color:#003049;
+font-size:18px;
+font-weight:bold;
+text-decoration:none;
+transition:0.3s;
+border:2px solid black;
+}
+
+.acceso:visited{
+color:#003049;
+}
+
+.acceso:hover{
+transform:scale(1.03);
+color:#003049;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+flex:1;
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+/* PROGRESO */
+
+.progreso{
+background:#0b7fd3;
+border-radius:15px;
+min-height:200px;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+font-size:42px;
+font-weight:bold;
+border:2px solid black;
+}
+
+/* INFORMACIÓN */
+
+.info{
+background:#005db5;
+border-radius:15px;
+min-height:350px;
+padding:25px;
+color:white;
+border:2px solid black;
+}
+
+.info h3{
+margin-bottom:15px;
+font-size:28px;
+}
+
+.info p{
+line-height:1.6;
+}
+
+/* QUIZ */
+
+.quiz-mini{
+margin-top:20px;
+background:#8adf43;
+color:white;
+font-weight:bold;
+padding:12px 18px;
+border-radius:10px;
+text-align:center;
+border:2px solid black;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+
+.dashboard{
+flex-direction:column;
+}
+
+.accesos{
+grid-template-columns:repeat(2,1fr);
+}
+
+.imagen-mapa{
+height:auto;
+}
+
+}
+
+@media(max-width:700px){
+
+header{
+flex-direction:column;
+gap:20px;
+}
+
+.menu{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.accesos{
+grid-template-columns:1fr;
+}
+
+}

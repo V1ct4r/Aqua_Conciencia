@@ -1,0 +1,80 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz AquaConciencia</title>
+    <link rel="stylesheet" href="{% static 'css/quiz.css' %}">
+</head>
+<body>
+
+<div class="contenedor">
+
+    <header>
+
+        <div class="logo">
+            <img src="{% static 'css/logo.png' %}" alt="">
+            <div class="texto-logo">
+                <h1>Aqua</h1>
+                <h1>Conciencia</h1>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <a href="{% url 'panel' %}">Mapa</a>
+            <a href="{% url 'quiz' %}">Quiz</a>
+            <a href="#">Curiosidades</a>
+            <a href="#">Ayuda</a>
+        </nav>
+
+        <div class="iconos">
+            <a href="{% url 'panel' %}">
+                <img src="{% static 'css/logo.casa.png' %}" alt="">
+            </a>
+
+            <a href="{% url 'perfil' %}">
+                <img src="{% static 'css/logo.usuario.png' %}" alt="">
+            </a>
+        </div>
+
+    </header>
+
+    <div class="panel-quiz">
+
+        <div class="grid-quizzes">
+
+            <a href="#" class="quiz-btn">Quiz 1</a>
+            <a href="#" class="quiz-btn">Quiz 2</a>
+            <a href="#" class="quiz-btn">Quiz 3</a>
+            <a href="#" class="quiz-btn">Quiz 4</a>
+
+            <a href="#" class="quiz-btn">Quiz 5</a>
+            <a href="#" class="quiz-btn">Quiz 6</a>
+            <a href="#" class="quiz-btn">Quiz 7</a>
+            <a href="#" class="quiz-btn">Quiz 8</a>
+
+            <a href="#" class="quiz-btn">Quiz 9</a>
+            <a href="#" class="quiz-btn">Quiz 10</a>
+            <a href="#" class="quiz-btn">Quiz 11</a>
+            <a href="#" class="quiz-btn">Quiz 12</a>
+
+        </div>
+
+        <div class="progreso">
+
+            <div class="circulo"></div>
+
+            <div class="texto-progreso">
+                <h3>Progreso: 0%</h3>
+                <h3>Completados: 0/12</h3>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

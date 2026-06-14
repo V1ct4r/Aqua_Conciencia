@@ -1,0 +1,120 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#39c7e8;
+padding:20px;
+min-height:100vh;
+}
+
+.contenedor{
+max-width:1400px;
+margin:auto;
+background:#46d4f2;
+padding:30px;
+border-radius:20px;
+border:2px solid black;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:40px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo img{
+width:120px;
+}
+
+.texto-logo{
+color:#0050a0;
+}
+
+.menu{
+background:#005db5;
+padding:15px 30px;
+border-radius:12px;
+display:flex;
+gap:25px;
+border:2px solid black;
+}
+
+.menu a{
+background:#8adf43;
+padding:10px 25px;
+border-radius:10px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+border:2px solid black;
+}
+
+.iconos{
+display:flex;
+gap:15px;
+}
+
+.iconos img{
+width:55px;
+height:55px;
+background:white;
+border-radius:50%;
+padding:8px;
+border:2px solid black;
+}
+
+.panel-quiz{
+max-width:900px;
+margin:auto;
+background:#005db5;
+padding:50px;
+border-radius:20px;
+border:2px solid black;
+}
+
+.grid-quizzes{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:35px;
+}
+
+.quiz-btn{
+background:#8adf43;
+color:white;
+text-decoration:none;
+text-align:center;
+padding:15px;
+border-radius:10px;
+font-weight:bold;
+border:2px solid black;
+}
+
+.progreso{
+margin-top:50px;
+display:flex;
+align-items:center;
+gap:30px;
+}
+
+.circulo{
+width:80px;
+height:80px;
+border-radius:50%;
+border:10px solid #8adf43;
+}
+
+.texto-progreso{
+color:white;
+font-weight:bold;
+}

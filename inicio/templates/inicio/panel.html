@@ -1,0 +1,116 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaConciencia</title>
+
+    <link rel="stylesheet" href="{% static 'css/panel.css' %}">
+</head>
+<body>
+
+<div class="contenedor">
+
+    <header>
+
+        <div class="logo">
+            <img src="{% static 'css/logo.png' %}" alt="Logo AquaConciencia">
+
+            <div class="texto-logo">
+                <h1>Aqua</h1>
+                <h1>Conciencia</h1>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <a href="{% url 'panel' %}">Mapa</a>
+            <a href="{% url 'quiz' %}">Quiz</a>
+            <a href="#">Curiosidades</a>
+            <a href="#">Ayuda</a>
+        </nav>
+
+        <div class="iconos">
+
+            <a href="{% url 'panel' %}">
+                <img src="{% static 'css/logo.casa.png' %}" alt="Inicio">
+            </a>
+
+            <a href="{% url 'perfil' %}">
+                <img src="{% static 'css/logo.usuario.png' %}" alt="Usuario">
+            </a>
+
+        </div>
+
+    </header>
+
+    <div class="dashboard">
+
+        <!-- IZQUIERDA -->
+        <div class="principal">
+
+            <div class="mapa">
+
+                <img
+                    src="{% static 'css/mapa_chiloe_nuevo.jpeg' %}"
+                    alt="Mapa de Chiloé"
+                    class="imagen-mapa"
+                >
+
+            </div>
+
+            <div class="accesos">
+
+                <a href="{% url 'noticias' %}" class="acceso">
+                    Noticias
+                </a>
+
+                <a href="{% url 'foro' %}" class="acceso">
+                    Foro
+                </a>
+
+                <a href="#" class="acceso">
+                    Educación Ambiental
+                </a>
+
+                <a href="#" class="acceso">
+                    Actividades
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+
+            <div class="progreso">
+                <h3>0%</h3>
+            </div>
+
+            <div class="info">
+
+                <div>
+
+                    <h3>Información</h3>
+
+                    <p>
+                        Selecciona una comuna del mapa para visualizar
+                        información relacionada con la contaminación
+                        ambiental y la conservación de los ecosistemas
+                        del Archipiélago de Chiloé.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
