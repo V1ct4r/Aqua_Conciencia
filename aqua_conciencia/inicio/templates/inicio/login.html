@@ -17,13 +17,17 @@
     </header>
 
     <section>
-        <p>Nombre de usuario</p>
-        <input type="text">     <!-- Se pide que el usuario ingrese su 'Nombre de usuario' -->
+       <form method="POST">
+    {% csrf_token %}
 
-        <p>Contraseña</p>
-        <input type="password">     <!-- Se pide que el usuario ingrese 'Contraseña' y que al ingresar su contraseña esta de censure con '°' (pero en negrita) -->
+    <p>Nombre de usuario</p>
+    <input type="text" name="usuario">
 
-        <button>Iniciar sesion</button>       <!-- Se crea un boton llamado 'Inicar sesion' -->
+    <p>Contraseña</p>
+    <input type="password" name="password">
+
+    <button type="submit">Iniciar sesión</button>
+</form>
         <a href="{% url 'crear_cuenta' %}">
     <button type="button">Crear una cuenta</button>
 </a>
