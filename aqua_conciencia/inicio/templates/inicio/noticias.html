@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Noticias</title>
+
+    <style>
+        body{
+            margin:0;
+            font-family:Arial,sans-serif;
+            background:#39c7e8;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+        }
+
+        .contenedor{
+            background:white;
+            padding:40px;
+            border-radius:20px;
+            width:800px;
+            text-align:center;
+        }
+
+        h1{
+            color:#005db5;
+            margin-bottom:20px;
+        }
+
+        .noticia{
+            background:#f5f5f5;
+            padding:20px;
+            border-radius:10px;
+            margin-top:15px;
+            text-align:left;
+        }
+
+        .volver{
+            display:inline-block;
+            margin-top:25px;
+            background:#005db5;
+            color:white;
+            text-decoration:none;
+            padding:12px 25px;
+            border-radius:10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+
+    <h1>Noticias Ambientales</h1>
+
+    <div class="noticia">
+        <h3>Conservación de Humedales</h3>
+        <p>Los humedales de Chiloé cumplen un papel fundamental en la biodiversidad y protección del agua.</p>
+    </div>
+
+    <div class="noticia">
+        <h3>Reducción de Residuos</h3>
+        <p>Se promueven campañas de reciclaje y educación ambiental en distintas comunas del archipiélago.</p>
+    </div>
+
+    <a href="{% url 'panel' %}" class="volver">
+        Volver al Panel
+    </a>
+
+</div>
+
+</body>
+</html><h1>Noticias</h1>

@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AquaConciencia</title>
+
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="logo-area">
+            <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">
+
+            <h1 class="titulo">
+                <span class="azul">Aqua</span><br>
+                <span class="verde">Conciencia</span>
+            </h1>
+        </div>
+
+        <form method="POST" class="formulario">
+            {% csrf_token %}
+
+            <label>Nombre de usuario</label>
+            <input type="text" name="usuario" required>
+
+            <label>Contraseña</label>
+            <input type="password" name="password" required>
+
+            <button type="submit" class="btn-login">
+                Iniciar sesión
+            </button>
+        </form>
+
+        <div class="acciones">
+            <a href="{% url 'crear_cuenta' %}">
+                <button type="button" class="btn-crear">
+                    Crear una cuenta
+                </button>
+            </a>
+
+            <a href="{% url 'restablecer' %}" class="restablecer">
+                Restablecer contraseña
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>

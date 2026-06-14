@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html><html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta - Aqua Conciencia</title><link rel="stylesheet" href="{% static 'css/creacion_cuenta.css' %}">
+
+</head>
+<body><div class="registro-container"><div class="registro-card">
+
+    <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">
+
+    <h1 class="titulo">
+        <span class="azul">Aqua</span><br>
+        <span class="verde">Conciencia</span>
+    </h1>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Correo Electrónico</label>
+        <input
+            type="email"
+            name="correo"
+            placeholder="aquaconciencia@example.com"
+            required
+        >
+
+        <label>Nombre de usuario</label>
+        <input
+            type="text"
+            name="usuario"
+            placeholder="Angel_example"
+            required
+        >
+
+        <label>Contraseña</label>
+        <input
+            type="password"
+            name="password"
+            placeholder="1234567890"
+            required
+        >
+
+        <button type="submit" class="btn-crear">
+            Crear cuenta
+        </button>
+
+    </form>
+
+</div>
+
+</div></body>
+</html>
