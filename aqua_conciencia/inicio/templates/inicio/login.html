@@ -11,7 +11,8 @@
 <body>
     <header>
         <div class="encabezado">
-            <img src="logo_aqua.png" alt="Logo" class="logo">   <!-- Se agrega logo de 'Aquaconciencia' -->
+            {% load static %}
+<img src="{% static 'logo.png' %}" alt="Logo" class="logo">
         </div>
     </header>
 
@@ -23,8 +24,15 @@
         <input type="password">     <!-- Se pide que el usuario ingrese 'Contraseña' y que al ingresar su contraseña esta de censure con '°' (pero en negrita) -->
 
         <button>Iniciar sesion</button>       <!-- Se crea un boton llamado 'Inicar sesion' -->
-        <button>Crear una cuenta</button>       <!-- Se crea boton llamado 'Crear una cuenta' -->   
-        <button class="boton-restablecer">Reestablecer contraseña</button>      <!-- Se crea boton llamado 'Resteblecer contraseña', pero este contando con un identificador llamado 'boton-restablecer', para en 'CSS' hacerle un diseño diferente a los demas 'Button' -->                   
+        <a href="{% url 'crear_cuenta' %}">
+    <button type="button">Crear una cuenta</button>
+</a>
+
+<a href="{% url 'restablecer' %}">
+    <button type="button" class="boton-restablecer">
+        Restablecer contraseña
+    </button>
+</a>
 
     </section>
 

@@ -23,19 +23,21 @@ body{
 
 /* Logo */
 .logo{
-    width: 220px !important;
+    width: 90px;
     height: auto;
+}
 
     
-}
+
 
 /* Aqua Conciencia */
 h1{
+   h1{
     margin: 0;
-    color: #1b5e20;
-    font-size: 72px;
-    font-weight: bold;
-    line-height: 0.9;
+    font-size: 55px;
+    line-height: 0.95;
+    text-align: center;
+}
     font-family: Arial, sans-serif;
 }
 
@@ -87,13 +89,13 @@ button:hover{
     background-color: #52b829;
 }
 .encabezado{
+   .encabezado{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 30px;
-
-    margin-bottom: 40px;
-
+    gap: 10px;
+    margin-bottom: 20px;
+}
     position: relative;
     left: -200px; /* mueve todo hacia la izquierda */
 }
