@@ -16,7 +16,7 @@ def inicio(request):
 
         if user is not None:
             login(request, user)
-            return redirect('/admin/')
+            return redirect('/panel/')
     
     return render(request, 'inicio/login.html')
 def restablecer(request):
@@ -44,3 +44,17 @@ def crear_cuenta(request):
 def error_404(request, exception):
     return render(request, 'inicio/error_404.html', status=404)
 from django.contrib.auth import authenticate, login
+def panel(request):
+    return render(request, 'inicio/panel.html')
+
+def noticias(request):
+    return render(request, 'inicio/noticias.html')
+
+def foro(request):
+    return render(request, 'inicio/foro.html')
+
+def perfil(request):
+    return render(request, 'inicio/perfil.html')
+
+def configuracion(request):
+    return render(request, 'inicio/configuracion.html')
