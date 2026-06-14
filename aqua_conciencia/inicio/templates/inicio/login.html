@@ -1,46 +1,65 @@
-<!DOCTYPE HTML>
+{% load static %}
+<!DOCTYPE html>
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <h1><span style="color: #005A8C;">Aqua</span><br><span style="color: #2E9E3E;">Conciencia</span></h1>       <!-- Se agrega el color '005A8C' a 'Aqua' y el color '2E9E3E' a 'Coonciencia' -->
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <link rel="stylesheet" href="../../static/css/login.css">       <!-- Se agrega el link para 'login.css' para desde ese archivo poder ordenar y agregar colores para la pagina -->
-    </head>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AquaConciencia - Login</title>
+
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
 
 <body>
+
     <header>
         <div class="encabezado">
-            {% load static %}
-<img src="{% static 'logo.png' %}" alt="Logo" class="logo">
+
+            <h1>
+                <span style="color:#005A8C;">Aqua</span><br>
+                <span style="color:#2E9E3E;">Conciencia</span>
+            </h1>
+
+            <img src="{% static 'logo.png' %}" alt="Logo" class="logo">
+
         </div>
     </header>
 
     <section>
-       <form method="POST">
-    {% csrf_token %}
 
-    <p>Nombre de usuario</p>
-    <input type="text" name="usuario">
+        <form method="POST">
+            {% csrf_token %}
 
-    <p>Contraseña</p>
-    <input type="password" name="password">
+            <p>Nombre de usuario</p>
+            <input type="text" name="usuario">
 
-    <button type="submit">Iniciar sesión</button>
-</form>
+            <p>Contraseña</p>
+            <input type="password" name="password">
+
+            <button type="submit">
+                Iniciar sesión
+            </button>
+
+        </form>
+
         <a href="{% url 'crear_cuenta' %}">
-    <button type="button">Crear una cuenta</button>
-</a>
+            <button type="button">
+                Crear una cuenta
+            </button>
+        </a>
 
-<a href="{% url 'restablecer' %}">
-    <button type="button" class="boton-restablecer">
-        Restablecer contraseña
-    </button>
-</a>
+        <a href="{% url 'restablecer' %}">
+            <button type="button" class="boton-restablecer">
+                Restablecer contraseña
+            </button>
+        </a>
 
     </section>
 
-    <script src="../../static/js/login.js"></script>        <!-- Se crea link del 'login.js' para desde ese archivo agregar el 'eye icon' y que asi el usuario si desea pueda apreciar lo que esta escribiendo en 'Contraseña' -->
-    
+    <script src="{% static 'js/login.js' %}"></script>
+
 </body>
+
 </html>

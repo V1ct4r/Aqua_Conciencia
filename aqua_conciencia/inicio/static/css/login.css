@@ -1,109 +1,97 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
 body{
-    margin: 0;
-    background-color: #33B5D6;
-    font-family: Arial, sans-serif;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    min-height: 100vh;
+    background:#34c0df;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-/* Logo + titulo */
-.encabezado{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-
-    margin-bottom: 50px;
+.login-container{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    width:450px;
+    box-shadow:0 0 20px rgba(0,0,0,0.2);
 }
 
-/* Logo */
+.logo-area{
+    text-align:center;
+    margin-bottom:30px;
+}
+
 .logo{
-    width: 90px;
-    height: auto;
+    width:120px;
+    margin-bottom:15px;
 }
 
-    
-
-
-/* Aqua Conciencia */
-h1{
-   h1{
-    margin: 0;
-    font-size: 55px;
-    line-height: 0.95;
-    text-align: center;
-}
-    font-family: Arial, sans-serif;
+.titulo{
+    font-size:40px;
 }
 
-/* Formulario */
-section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.azul{
+    color:#0b5f8d;
 }
 
-/* Etiquetas */
-p{
-    width: 600px;
-    margin: 10px 0 5px 0;
-    font-size: 20px;
-    color: #000;
+.verde{
+    color:#7ed957;
 }
 
-/* Cajas de texto */
-input{
-    width: 600px;
-    padding: 15px;
-    margin-bottom: 30px;
-
-    border: 1px solid #999;
-    border-radius: 4px;
-
-    font-size: 18px;
-    box-sizing: border-box;
+.formulario{
+    display:flex;
+    flex-direction:column;
 }
 
-/* Botones */
-button{
-    width: 240px;
-    padding: 15px;
-    margin: 8px 0;
-
-    background-color: #62d132;
-    color: white;
-
-    border: none;
-    border-radius: 4px;
-
-    font-size: 20px;
-    cursor: pointer;
+.formulario label{
+    margin-top:10px;
+    margin-bottom:5px;
+    font-weight:bold;
 }
 
-button:hover{
-    background-color: #52b829;
-}
-.encabezado{
-   .encabezado{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-    position: relative;
-    left: -200px; /* mueve todo hacia la izquierda */
+.formulario input{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    margin-bottom:10px;
 }
 
-.boton-restablecer {
-    background-color: transparent;
-    color: #005A8C;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
+.btn-login{
+    margin-top:10px;
+    background:#0b5f8d;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.btn-login:hover{
+    background:#08496d;
+}
+
+.acciones{
+    margin-top:20px;
+    text-align:center;
+}
+
+.btn-crear{
+    background:#7ed957;
+    border:none;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    margin-bottom:10px;
+}
+
+.restablecer{
+    display:block;
+    margin-top:10px;
+    color:#0b5f8d;
+    text-decoration:none;
 }
