@@ -1,32 +1,51 @@
-<!DOCTYPE html>
+{% load static %}
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <h1><span style="color: #005A8C;">Aqua</span><br><span style="color: #2E9E3E;">Conciencia</span></h1>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <link rel="stylesheet" href="../../static/css/nueva_contraseña.css">
-    </head>
+<!DOCTYPE html><html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Contraseña - Aqua Conciencia</title><link rel="stylesheet" href="{% static 'css/creacion_cuenta.css' %}">
 
-<body>
-    <header>
-        <div class="encabezado">
-            <img src="logo_aqua.png" alt="Logo" class="logo">
-        </div>
-    </header>
+</head><body><div class="registro-card">
 
-    <section>
-        <h2>Restablecer contraseña</h2>
-        <p>Escriba la nueva contraseña y confirme para finalizar</p>
+    <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">
 
-        <p>Nueva contraseña</p>
-        <input type="text">
+    <div class="titulo">
+        <img src="{% static 'css/titulo.png' %}" alt="Agua Conciencia">
+    </div>
 
-        <p>Reescribir contraseña</p>
-        <input type="text">
+    <h2>Restablecer Contraseña</h2>
 
-        <button>Finalizar</button>
-    </section>
+    <p class="descripcion">
+        Escriba la nueva contraseña y confirme para finalizar.
+    </p>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Nueva Contraseña</label>
+        <input
+            type="password"
+            name="password1"
+            placeholder="Ingrese su nueva contraseña"
+            required
+        >
+
+        <label>Reescribir Contraseña</label>
+        <input
+            type="password"
+            name="password2"
+            placeholder="Confirme su contraseña"
+            required
+        >
+
+        <button type="submit" class="btn-crear">
+            Finalizar
+        </button>
+
+    </form>
+
+</div>
+
 </body>
-
 </html>
