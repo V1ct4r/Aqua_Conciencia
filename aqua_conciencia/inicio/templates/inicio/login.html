@@ -1,56 +1,47 @@
-{% load static %}
+{% load static %}       <!-- codigo para poder usar imagenes -->
+
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="es">     <!-- Se define el 'idioma' de la web -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>AquaConciencia</title>
-
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <meta charset="UTF-8">  <!-- Se introduce que la pagina sea capaz de soportar distintos tipos de caracteres (ñ,á,ü) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">      <!-- Se introduce codigo para que la pagina sea capas de adaptarse a todo tipos de dispositivos (laptop, celulares, tablet, etc.) -->
+    <title>AquaConciencia</title>  <!-- Título que aparece en la pestaña del navegador -->
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">  <!-- Vincula este archivo al respectivo archivo del CSS para poder configurarlo desde ahi-->
 </head>
-
 <body>
-
     <div class="login-container">
-
         <div class="logo-area">
-            <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">
-
+            <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">  <!-- Logo de la pagina -->
             <h1 class="titulo">
-                <span class="azul">Aqua</span><br>
-                <span class="verde">Conciencia</span>
+                <span class="azul">Aqua</span><br>      <!-- Se establece el identificador 'azul' y 'verde' para despues desde el archivo de CSS poder 'llamarlas' y poder editarlas-->
+                <span class="verde">Conciencia</span> 
             </h1>
         </div>
 
-        <form method="POST" class="formulario">
-            {% csrf_token %}
-
+        <!-- Formulario de inicio de sesión -->
+        <form method="POST" class="formulario">  
+            {% csrf_token %}  
             <label>Nombre de usuario</label>
-            <input type="text" name="usuario" required>
-
+            <input type="text" name="usuario" required>  <!-- Se le pide al usuario de forma obligatoria que ingrese su 'Nombre de usuario' en 'typo text', osea al ingresar su 'Nombre de usuario' este parametro no 'ocultara' lo que el usuario este escribiendo, como en el tipo 'password'-->
             <label>Contraseña</label>
-            <input type="password" name="password" required>
-
-            <button type="submit" class="btn-login">
+            <input type="password" name="password" required>  <!-- Se pide al usuario de forma obligatoria que ingrese su contraseña para que pueda 'avanzar', pero este parametro siendo de 'type password' lo que significa que lo que se este escribiendo en este parametro sera 'ocultado' con '●' -->
+            <button type="submit" class="btn-login">  <!-- Botón el cual le perimitira ingresar a la pagina de inicio de la pagina web (siempre cuano halla cumplildo los anteriores parametros) -->
                 Iniciar sesión
             </button>
         </form>
 
+        <!-- Botones -->
         <div class="acciones">
-            <a href="{% url 'crear_cuenta' %}">
+            <a href="{% url 'crear_cuenta' %}">  <!-- Enlace el cual redirige al usuario al campo en el cual deberan ingresar sus datos para 'Crear su cuenta' -->
                 <button type="button" class="btn-crear">
                     Crear una cuenta
                 </button>
             </a>
-
-            <a href="{% url 'restablecer' %}" class="restablecer">
+            <a href="{% url 'restablecer' %}" class="restablecer">  <!--  Enlace el cual redirige al usuario al campo en el cual deberan ingresar sus datos para 'Restablecer su contraseña' -->
                 Restablecer contraseña
             </a>
         </div>
 
     </div>
-
 </body>
 </html>

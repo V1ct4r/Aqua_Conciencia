@@ -19,14 +19,14 @@
     <form method="POST">
         {% csrf_token %}
 
-        <label>Correo Electrónico</label>
+        <label>Correo Electrónico</label>  
         <input
             type="email"
             name="correo"
             placeholder="aquaconciencia@example.com"
             required
         >
-
+        <!-- Se crea el parametro 'Nombre de usuario'-->
         <label>Nombre de usuario</label>
         <input
             type="text"
@@ -34,7 +34,8 @@
             placeholder="Angel_example"
             required
         >
-
+        
+        <!-- Se crea el parametro 'Contraseña', el cual va a hacer un boton el cual va requerir que el usuario que cree una contraseña, con 'type password' lo que va a hacer que sus sus carateres esten 'ocultados' con '●' -->
         <label>Contraseña</label>
         <input
             type="password"
@@ -42,7 +43,7 @@
             placeholder="1234567890"
             required
         >
-
+        <!-- Se crea el parametro 'Crear cuenta', el cual va hacer un boton el cual al darle click se va a crear la nueva cuenta (siempre cuando se cumplan los anteriores parametros) -->
         <button type="submit" class="btn-crear">
             Crear cuenta
         </button>
