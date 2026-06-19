@@ -11,10 +11,11 @@
 
     <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">
 
-    <h1 class="titulo">
-        <span class="azul">Aqua</span><br>
-        <span class="verde">Conciencia</span>
-    </h1>
+    <div class="titulo">
+    <img src="{% static 'css/titulo.png' %}"
+         alt="Aqua Conciencia"
+         class="titulo-img">
+</div
 
     <form method="POST">
         {% csrf_token %}

@@ -20,9 +20,12 @@ def inicio(request):
     
     return render(request, 'inicio/login.html')
 def restablecer(request):
+
+    if request.method == 'POST':
+       return redirect('/nueva-contrasena/')
     return render(request, 'inicio/restablecer_contraseña.html')
-
-
+def nueva_contrasena(request):
+    return render(request, 'inicio/nueva_contraseña.html')
 def crear_cuenta(request):
 
     if request.method == 'POST':
@@ -60,3 +63,5 @@ def configuracion(request):
     return render(request, 'inicio/configuracion.html')
 def quiz(request):
     return render(request, 'inicio/quiz.html')
+def nueva_contrasena(request):
+    return render(request, 'inicio/nueva_contraseña.html')

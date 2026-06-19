@@ -5,7 +5,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>AquaConciencia</title>
 
     <link rel="stylesheet" href="{% static 'css/login.css' %}">
@@ -16,12 +15,15 @@
     <div class="login-container">
 
         <div class="logo-area">
-            <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">
 
-            <h1 class="titulo">
-                <span class="azul">Aqua</span><br>
-                <span class="verde">Conciencia</span>
-            </h1>
+            <img src="{% static 'logo.png' %}"
+                 alt="Logo AquaConciencia"
+                 class="logo">
+
+            <img src="{% static 'css/titulo.png' %}"
+                 alt="Aqua Conciencia"
+                 class="logo-titulo">
+
         </div>
 
         <form method="POST" class="formulario">
@@ -39,6 +41,7 @@
         </form>
 
         <div class="acciones">
+
             <a href="{% url 'crear_cuenta' %}">
                 <button type="button" class="btn-crear">
                     Crear una cuenta
@@ -48,6 +51,7 @@
             <a href="{% url 'restablecer' %}" class="restablecer">
                 Restablecer contraseña
             </a>
+
         </div>
 
     </div>
