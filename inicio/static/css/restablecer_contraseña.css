@@ -1,106 +1,92 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
 }
 
 body{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:#33d9ff;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#33d9ff;
 }
 
 .registro-card{
-width:680px;
-background:white;
-border:3px solid black;
-border-radius:10px;
-padding:70px 60px 50px;
-position:relative;
-box-shadow:0 0 15px rgba(0,0,0,.2);
+    width:680px;
+    background:white;
+    border-radius:10px;
+    padding:60px;
+    position:relative;
+    box-shadow:0 0 15px rgba(0,0,0,.2);
 }
 
 .logo{
-width:110px;
-position:absolute;
-top:-15px;
-left:25px;
+    width:130px;
+    position:absolute;
+    top:-20px;
+    left:40px;
 }
 
 .titulo{
-text-align:center;
-margin-top:-20px;
-margin-bottom:25px;
+    text-align:center;
+    margin-bottom:40px;
+    line-height:1;
 }
 
-.titulo img{
-width:180px;
-height:auto;
-display:block;
-margin:0 auto;
+.azul{
+    color:#0b5fa5;
 }
 
-h1{
-text-align:center;
-color:#333;
-margin-bottom:10px;
-font-size:22px;
+.verde{
+    color:#3cab3c;
+}
+
+h2{
+    text-align:center;
+    margin-bottom:10px;
 }
 
 .descripcion{
-text-align:center;
-color:#555;
-font-size:15px;
-line-height:1.4;
-margin-bottom:30px;
+    text-align:center;
+    color:#555;
+    font-size:14px;
+    margin-bottom:30px;
+    line-height:1.5;
 }
 
 form{
-display:flex;
-flex-direction:column;
+    display:flex;
+    flex-direction:column;
 }
 
 label{
-font-weight:bold;
-color:#333;
-margin-bottom:8px;
+    margin-top:20px;
+    margin-bottom:8px;
+    font-weight:bold;
 }
 
 input{
-width:100%;
-padding:12px;
-border:2px solid #1aa7d8;
-border-radius:5px;
-font-size:15px;
-margin-bottom:20px;
-outline:none;
-}
-
-input:focus{
-border-color:#0b5fa5;
+    padding:12px;
+    border:2px solid #1aa7d8;
+    border-radius:5px;
+    font-size:16px;
 }
 
 .btn-crear{
-    width:170px;
-    height:48px;
-    margin:20px auto 0;
-    border:3px solid black !important;
-    border-radius:5px;
-    background:#2e9f2e;
+    margin:40px auto 0;
+    width:180px;
+    height:50px;
+    border:none;
+    background:#39d739;
     color:white;
     font-size:18px;
-    font-weight:bold;
+    border-radius:5px;
     cursor:pointer;
+    transition:0.3s;
 }
 
 .btn-crear:hover{
-background:#257f25;
-border:3px solid black;
-transform:scale(1.03);
-}
-button{
-    border:3px solid black !important;
+    transform:scale(1.03);
 }

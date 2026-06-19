@@ -27,8 +27,8 @@
         <nav class="menu">
             <a href="{% url 'panel' %}">Mapa</a>
             <a href="{% url 'quiz' %}">Quiz</a>
-            <a href="#">Curiosidades</a>
-            <a href="#">Ayuda</a>
+            <a href="{% url 'noticias' %}">Curiosidades</a>
+            <a href="{% url 'configuracion' %}">Ayuda</a>
         </nav>
 
         <div class="iconos">
@@ -47,7 +47,6 @@
 
     <div class="dashboard">
 
-        <!-- IZQUIERDA -->
         <div class="principal">
 
             <div class="mapa">
@@ -70,11 +69,11 @@
                     Foro
                 </a>
 
-                <a href="#" class="acceso">
+                <a href="{% url 'quiz' %}" class="acceso">
                     Educación Ambiental
                 </a>
 
-                <a href="#" class="acceso">
+                <a href="{% url 'configuracion' %}" class="acceso">
                     Actividades
                 </a>
 
@@ -82,7 +81,6 @@
 
         </div>
 
-        <!-- SIDEBAR -->
         <div class="sidebar">
 
             <div class="progreso">

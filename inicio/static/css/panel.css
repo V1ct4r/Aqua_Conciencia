@@ -20,7 +20,6 @@ background:#46d4f2;
 border-radius:20px;
 padding:25px;
 box-shadow:0 0 10px rgba(0,0,0,0.2);
-border:2px solid black;
 }
 
 /* HEADER */
@@ -64,7 +63,6 @@ padding:15px 30px;
 border-radius:12px;
 display:flex;
 gap:25px;
-border:2px solid black;
 }
 
 .menu a{
@@ -75,7 +73,6 @@ font-weight:bold;
 padding:10px 25px;
 border-radius:12px;
 transition:0.3s;
-border:2px solid black;
 }
 
 .menu a:hover{
@@ -99,7 +96,6 @@ border-radius:50%;
 padding:8px;
 cursor:pointer;
 transition:0.3s;
-border:2px solid black;
 }
 
 .iconos img:hover{
@@ -125,7 +121,6 @@ flex:4;
 background:white;
 border-radius:20px;
 padding:20px;
-border:2px solid black;
 }
 
 .imagen-mapa{
@@ -142,25 +137,27 @@ margin-top:20px;
 background:#005db5;
 padding:20px;
 border-radius:12px;
+
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:20px;
-border:2px solid black;
 }
 
 .acceso{
 height:70px;
 background:#8adf43;
 border-radius:12px;
+
 display:flex;
 justify-content:center;
 align-items:center;
+
 color:#003049;
 font-size:18px;
 font-weight:bold;
+
 text-decoration:none;
 transition:0.3s;
-border:2px solid black;
 }
 
 .acceso:visited{
@@ -187,13 +184,14 @@ gap:20px;
 background:#0b7fd3;
 border-radius:15px;
 min-height:200px;
+
 display:flex;
 justify-content:center;
 align-items:center;
+
 color:white;
 font-size:42px;
 font-weight:bold;
-border:2px solid black;
 }
 
 /* INFORMACIÓN */
@@ -204,7 +202,6 @@ border-radius:15px;
 min-height:350px;
 padding:25px;
 color:white;
-border:2px solid black;
 }
 
 .info h3{
@@ -226,7 +223,6 @@ font-weight:bold;
 padding:12px 18px;
 border-radius:10px;
 text-align:center;
-border:2px solid black;
 }
 
 /* RESPONSIVE */

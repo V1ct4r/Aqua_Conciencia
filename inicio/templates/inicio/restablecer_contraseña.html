@@ -17,16 +17,16 @@
         <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">
 
         <div class="titulo">
-    <img src="{% static 'css/titulo.png' %}" alt="Agua Conciencia">
-</div>
+            <img src="{% static 'css/titulo.png' %}" alt="Agua Conciencia">
+        </div>
 
         <h2>Restablecer Contraseña</h2>
 
         <p style="text-align:center; margin-bottom:25px;">
             Ingresa el correo electrónico asociado 
-        a tu cuenta. 
+            a tu cuenta. 
             Recibirás un enlace para crear una 
-        nueva contraseña.
+            nueva contraseña.
         </p>
 
         <form method="POST">
@@ -41,7 +41,10 @@
                 required
             >
 
-            <button type="submit" class="btn-crear">
+            <button
+                type="submit"
+                class="btn-crear"
+                formaction="{% url 'nueva_contraseña' %}">
                 Continuar
             </button>
 
