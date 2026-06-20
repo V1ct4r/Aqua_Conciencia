@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">       <!-- Se introduce codigo para que la pagina sea capas de adaptarse a todo tipos de dispositivos (laptop, celulares, tablet, etc.) -->
     <title>AquaConciencia</title>
 
-    <link rel="stylesheet" href="{% static 'css/panel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/panel.css' %}">      <!-- Se establece el link de este archivo, al archivo de css llamdo 'panel.css' para poder editar este archivo desde 'panel.css' -->
 </head>
 <body>
 
@@ -16,8 +16,9 @@
     <header>
 
         <div class="logo">
-            <img src="{% static 'css/logo.png' %}" alt="Logo AquaConciencia">
+            <img src="{% static 'css/logo.png' %}" alt="Logo AquaConciencia">        <!-- Se establece la imagen del logo en la pagina y con el identificador 'logo AquaConciencia' para poder editar su posicionamiento-->
 
+            <!-- Se establece el titulo 'Aqua Conciencia' con el identificador 'texto-logo' para editar su posicionamiento desde css-->
             <div class="texto-logo">
                 <h1>Aqua</h1>
                 <h1>Conciencia</h1>
@@ -33,10 +34,11 @@
 
         <div class="iconos">
 
-            <a href="{% url 'panel' %}">
-                <img src="{% static 'css/logo.casa.png' %}" alt="Inicio">
+            <a href="{% url 'panel' %}">      
+                <img src="{% static 'css/logo.casa.png' %}" alt="Inicio">       <!-- Se establece el icono del logo de la 'casa' -->
             </a>
 
+               <!-- Se establece el icono del perfil y se establece que al seleccionarlo rediriga al usuario a 'perfil' -->
             <a href="{% url 'perfil' %}">
                 <img src="{% static 'css/logo.usuario.png' %}" alt="Usuario">
             </a>
@@ -45,15 +47,16 @@
 
     </header>
 
-    <div class="dashboard">
+    <div class="dashboard">     <!-- Se establece el identificador 'dashboard' para poder editarlo desde el css -->
 
-        <!-- IZQUIERDA -->
-        <div class="principal">
+        
+        <div class="principal">      <!-- Se establece el identificador 'principal' para poder editarlo desde el css -->
 
-            <div class="mapa">
+            <div class="mapa">       <!-- Se establece el identificador 'mapa' para poder editarlo desde el css -->
 
+                <!-- Se establecen la imagen del mapa con el identificador 'imag-mapa'  -->
                 <img
-                    src="{% static 'css/mapa_chiloe_nuevo.jpeg' %}"
+                    src="{% static 'css/mapa_chiloe_nuevo.jpeg' %}"     
                     alt="Mapa de Chiloé"
                     class="imagen-mapa"
                 >
@@ -62,14 +65,15 @@
 
             <div class="accesos">
 
-                <a href="{% url 'noticias' %}" class="acceso">
+                <a href="{% url 'noticias' %}" class="acceso">         <!-- Se establece que rediriga al ususario a 'Noticias' -->
                     Noticias
                 </a>
 
-                <a href="{% url 'foro' %}" class="acceso">
+                <a href="{% url 'foro' %}" class="acceso">      <!-- Se establece que rediriga al ususario a 'foro' -->
                     Foro
                 </a>
 
+                <!-- Se establece como boton a 'eduacacion ambiental' y a 'Actividades' pero no redirigiendo al usuario -->
                 <a href="#" class="acceso">
                     Educación Ambiental
                 </a>
@@ -82,17 +86,17 @@
 
         </div>
 
-        <!-- SIDEBAR -->
-        <div class="sidebar">
+        <div class="sidebar">        <!-- Se establece el identificador 'sidebar' para poder editarlo desde el css -->
 
-            <div class="progreso">
+            <div class="progreso">       <!-- Se establece el identificador 'progreso' para poder editarlo desde el css -->
                 <h3>0%</h3>
             </div>
 
-            <div class="info">
+            <div class="info">       <!-- Se establece el identificador 'info' para poder editarlo desde el css -->
 
                 <div>
 
+                    <!-- Se establece texto para mostrar en la web -->
                     <h3>Información</h3>
 
                     <p>

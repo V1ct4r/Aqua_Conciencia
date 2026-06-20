@@ -1,16 +1,20 @@
-{% load static %}
+{% load static %}        <!-- codigo para poder usar imagenes -->
 
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">         <!-- Se define el 'idioma' de la web -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Cuenta - Aqua Conciencia</title><link rel="stylesheet" href="{% static 'css/creacion_cuenta.css' %}">
+    <meta charset="UTF-8">       <!-- Se introduce que la pagina sea capaz de soportar distintos tipos de caracteres (ñ,á,ü) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">      <!-- Se introduce codigo para que la pagina sea capas de adaptarse a todo tipos de dispositivos (laptop, celulares, tablet, etc.) -->
+    <title>Crear Cuenta - Aqua Conciencia</title>       <!-- Se establece el titulo de la pagina -->
+    <link rel="stylesheet" href="{% static 'css/creacion_cuenta.css' %}">         <!-- Se establece el link de este archivo, al archivo de css llamdo 'creacion_cuenta.css' para poder editar este archivo desde 'creacion_cuenta.css' -->
 
 </head>
-<body><div class="registro-container"><div class="registro-card">
+<body><div class="registro-container">        <!-- Se establece el identificador 'registro-container' para poder editarlo desde el css -->
+    <div class="registro-card">           <!-- Se establece el identificador 'registro-card' para poder editarlo desde el css -->
 
-    <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">
+    <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">      <!-- Se ingresa el logo de 'AquaConciencia' -->
 
+    <!-- Se ingresa el titulo de la pagina 'AquaConciencia' -->
     <h1 class="titulo">
         <span class="azul">Aqua</span><br>
         <span class="verde">Conciencia</span>
@@ -18,7 +22,8 @@
 
     <form method="POST">
         {% csrf_token %}
-
+        
+        <!-- Se establece lo que se debe ingresar en 'Correo electronico' y tambien un ejemplo de como deberia ser -->
         <label>Correo Electrónico</label>  
         <input
             type="email"

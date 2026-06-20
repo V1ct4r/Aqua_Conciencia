@@ -19,7 +19,6 @@ border-radius:20px;
 border:2px solid black;
 }
 
-/* HEADER */
 
 header{
 display:flex;
@@ -83,7 +82,6 @@ border-radius:50%;
 border:2px solid black;
 }
 
-/* PERFIL */
 
 .perfil-layout{
 display:flex;
@@ -165,7 +163,7 @@ font-weight:bold;
 cursor:pointer;
 }
 
-/* PANEL DERECHO */
+
 
 .progreso-panel{
 flex:1;

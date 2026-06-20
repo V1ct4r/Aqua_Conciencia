@@ -3,18 +3,17 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <link rel="stylesheet" href="{% static 'css/error_404.css' %}"> <!-- Se vincula el respectivo archivo de CSS para vincularlo a este archivo -->
-</head>
+    <meta charset="utf-8">       <!-- Se introduce que la pagina sea capaz de soportar distintos tipos de caracteres (ñ,á,ü) -->
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">       <!-- Se introduce codigo para que la pagina sea capas de adaptarse a todo tipos de dispositivos (laptop, celulares, tablet, etc.) -->
+    <link rel="stylesheet" href="{% static 'css/error_404.css' %}">           <!-- Se establece el link de este archivo, al archivo de css llamdo 'error_404.css' para poder editar este archivo desde 'error_404.css' -->
 
 <body>  
     <header>
-        <div class="encabezado">
-            <img src="{% static 'logo_aqua.png' %}" alt="Logo" class="logo-404">
+        <div class="encabezado">         <!-- Se establece el identificador 'encabezado' para poder editarlo desde el css -->
+            <img src="{% static 'logo_aqua.png' %}" alt="Logo" class="logo-404">         <!-- Se establece el identificador 'logo-404' para poder editarlo desde el css -->
         </div>
     </header>
-    <h1 style="color: #000000">Error 404</h1>
+    <h1 style="color: #000000">Error 404</h1>       <!-- Se establece el color del mensaje 'Error 404' -->
 
     <section>
         <p>La pagina solicitada no fue encontrada o no se encuentra disponible</p>  <!--  Se crea el mensaje 'La pagina solicitada no fue encontrada o no se encuentra disponible', el cual se mostrara en la pagina-->

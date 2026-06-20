@@ -2,17 +2,17 @@
 
 <!DOCTYPE html>
 <html lang="es">     <!-- Se define el 'idioma' de la web -->
-<head>
+<head>      
     <meta charset="UTF-8">  <!-- Se introduce que la pagina sea capaz de soportar distintos tipos de caracteres (ñ,á,ü) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">      <!-- Se introduce codigo para que la pagina sea capas de adaptarse a todo tipos de dispositivos (laptop, celulares, tablet, etc.) -->
     <title>AquaConciencia</title>  <!-- Título que aparece en la pestaña del navegador -->
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">  <!-- Vincula este archivo al respectivo archivo del CSS para poder configurarlo desde ahi-->
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">       <!-- Se establece el link de este archivo, al archivo de css llamdo 'login.css' para poder editar este archivo desde 'login.css' -->
 </head>
-<body>
+<body>       
     <div class="login-container">
-        <div class="logo-area">
+        <div class="logo-area">      <!-- Se establece el identificador 'logo-area' para poder editarlo desde el css -->
             <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">  <!-- Logo de la pagina -->
-            <h1 class="titulo">
+            <h1 class="titulo">      <!-- Se establece el identificador 'progreso-panel' para poder editarlo desde el css -->
                 <span class="azul">Aqua</span><br>      <!-- Se establece el identificador 'azul' y 'verde' para despues desde el archivo de CSS poder 'llamarlas' y poder editarlas-->
                 <span class="verde">Conciencia</span> 
             </h1>
@@ -31,9 +31,9 @@
         </form>
 
         <!-- Botones -->
-        <div class="acciones">
+        <div class="acciones">       <!-- Se establece el identificador 'acciones' para poder editarlo desde el css -->
             <a href="{% url 'crear_cuenta' %}">  <!-- Enlace el cual redirige al usuario al campo en el cual deberan ingresar sus datos para 'Crear su cuenta' -->
-                <button type="button" class="btn-crear">
+                <button type="button" class="btn-crear">         <!-- Se establece el identificador 'btn-crear' para poder editarlo desde el css -->
                     Crear una cuenta
                 </button>
             </a>
