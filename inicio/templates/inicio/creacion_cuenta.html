@@ -1,33 +1,38 @@
-{% load static %}
+{% load static %}        <!-- codigo para poder usar imagenes -->
 
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">         <!-- Se define el 'idioma' de la web -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crear Cuenta - Aqua Conciencia</title><link rel="stylesheet" href="{% static 'css/creacion_cuenta.css' %}">
+    <meta charset="UTF-8">       <!-- Se introduce que la pagina sea capaz de soportar distintos tipos de caracteres (ñ,á,ü) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">      <!-- Se introduce codigo para que la pagina sea capas de adaptarse a todo tipos de dispositivos (laptop, celulares, tablet, etc.) -->
+    <title>Crear Cuenta - Aqua Conciencia</title>       <!-- Se establece el titulo de la pagina -->
+    <link rel="stylesheet" href="{% static 'css/creacion_cuenta.css' %}">         <!-- Se establece el link de este archivo, al archivo de css llamdo 'creacion_cuenta.css' para poder editar este archivo desde 'creacion_cuenta.css' -->
 
 </head>
-<body><div class="registro-container"><div class="registro-card">
+<body>
+    <div class="registro-container">        <!-- Se establece el identificador 'registro-container' para poder editarlo desde el css -->
+    <div class="registro-card">           <!-- Se establece el identificador 'registro-card' para poder editarlo desde el css -->
 
-    <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">
+    <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">      <!-- Se ingresa el logo de 'AquaConciencia' -->
 
-    <div class="titulo">
-    <img src="{% static 'css/titulo.png' %}"
-         alt="Aqua Conciencia"
-         class="titulo-img">
-</div
+    <!-- Se ingresa el titulo de la pagina 'AquaConciencia' -->
+    <h1 class="titulo">
+        <span class="azul">Aqua</span><br>
+        <span class="verde">Conciencia</span>
+    </h1>
 
     <form method="POST">
         {% csrf_token %}
-
-        <label>Correo Electrónico</label>
+        
+        <!-- Se establece lo que se debe ingresar en 'Correo electronico' y tambien un ejemplo de como deberia ser -->
+        <label>Correo Electrónico</label>  
         <input
             type="email"
             name="correo"
             placeholder="aquaconciencia@example.com"
             required
         >
-
+        <!-- Se crea el parametro 'Nombre de usuario'-->
         <label>Nombre de usuario</label>
         <input
             type="text"
@@ -35,15 +40,20 @@
             placeholder="Angel_example"
             required
         >
-
+        
+        <!-- Se crea el parametro 'Contraseña', el cual va a hacer un boton el cual va requerir que el usuario que cree una contraseña, con 'type password' lo que va a hacer que sus sus carateres esten 'ocultados' con '●' -->
         <label>Contraseña</label>
-        <input
-            type="password"
-            name="password"
-            placeholder="1234567890"
-            required
-        >
-
+        <div class="campo-password">
+          <input
+          type="password"
+          name="password"
+          placeholder="1234567890"
+          required
+          id="password"
+    >
+    <span class="toggle-password" onclick="togglePassword()">👁️</span>
+</div>
+        <!-- Se crea el parametro 'Crear cuenta', el cual va hacer un boton el cual al darle click se va a crear la nueva cuenta (siempre cuando se cumplan los anteriores parametros) -->
         <button type="submit" class="btn-crear">
             Crear cuenta
         </button>
@@ -52,5 +62,7 @@
 
 </div>
 
-</div></body>
+</div>
+<script src="{% static 'js/creacion_cuenta.js' %}"></script>
+</body>
 </html>

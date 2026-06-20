@@ -18,13 +18,16 @@
             </h1>
         </div>
 
-        <!-- Formulario de inicio de sesión -->
+       <!-- Formulario de inicio de sesión -->
         <form method="POST" class="formulario">  
             {% csrf_token %}  
             <label>Nombre de usuario</label>
             <input type="text" name="usuario" required>  <!-- Se le pide al usuario de forma obligatoria que ingrese su 'Nombre de usuario' en 'typo text', osea al ingresar su 'Nombre de usuario' este parametro no 'ocultara' lo que el usuario este escribiendo, como en el tipo 'password'-->
             <label>Contraseña</label>
-            <input type="password" name="password" required>  <!-- Se pide al usuario de forma obligatoria que ingrese su contraseña para que pueda 'avanzar', pero este parametro siendo de 'type password' lo que significa que lo que se este escribiendo en este parametro sera 'ocultado' con '●' -->
+            <div class="campo-password">
+                <input type="password" name="password" required id="password">  <!-- Se pide al usuario de forma obligatoria que ingrese su contraseña para que pueda 'avanzar', pero este parametro siendo de 'type password' lo que significa que lo que se este escribiendo en este parametro sera 'ocultado' con '●' -->
+                <span class="toggle-password" onclick="togglePassword()">👁️</span>
+            </div>
             <button type="submit" class="btn-login">  <!-- Botón el cual le perimitira ingresar a la pagina de inicio de la pagina web (siempre cuano halla cumplildo los anteriores parametros) -->
                 Iniciar sesión
             </button>
@@ -43,5 +46,6 @@
         </div>
 
     </div>
+    <script src="{% static 'js/login.js' %}"></script>
 </body>
 </html>

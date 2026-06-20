@@ -11,6 +11,24 @@ box-sizing:border-box;
 font-family:Arial, sans-serif;
 }
 
+.campo-password {
+    position: relative;
+}
+
+.campo-password input {
+    width: 100%;
+    padding-right: 35px; 
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+}
+
 body{
 min-height:100vh;
 display:flex;

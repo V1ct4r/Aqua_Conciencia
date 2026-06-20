@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="{% static 'css/creacion_cuenta.css' %}">         <!-- Se establece el link de este archivo, al archivo de css llamdo 'creacion_cuenta.css' para poder editar este archivo desde 'creacion_cuenta.css' -->
 
 </head>
-<body><div class="registro-container">        <!-- Se establece el identificador 'registro-container' para poder editarlo desde el css -->
+<body>
+    <div class="registro-container">        <!-- Se establece el identificador 'registro-container' para poder editarlo desde el css -->
     <div class="registro-card">           <!-- Se establece el identificador 'registro-card' para poder editarlo desde el css -->
 
     <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">      <!-- Se ingresa el logo de 'AquaConciencia' -->
@@ -42,12 +43,16 @@
         
         <!-- Se crea el parametro 'Contraseña', el cual va a hacer un boton el cual va requerir que el usuario que cree una contraseña, con 'type password' lo que va a hacer que sus sus carateres esten 'ocultados' con '●' -->
         <label>Contraseña</label>
-        <input
-            type="password"
-            name="password"
-            placeholder="1234567890"
-            required
-        >
+        <div class="campo-password">
+          <input
+          type="password"
+          name="password"
+          placeholder="1234567890"
+          required
+          id="password"
+    >
+    <span class="toggle-password" onclick="togglePassword()">👁️</span>
+</div>
         <!-- Se crea el parametro 'Crear cuenta', el cual va hacer un boton el cual al darle click se va a crear la nueva cuenta (siempre cuando se cumplan los anteriores parametros) -->
         <button type="submit" class="btn-crear">
             Crear cuenta
@@ -57,5 +62,7 @@
 
 </div>
 
-</div></body>
+</div>
+<script src="{% static 'js/creacion_cuenta.js' %}"></script>
+</body>
 </html>
