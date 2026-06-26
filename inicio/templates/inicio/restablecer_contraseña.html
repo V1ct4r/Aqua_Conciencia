@@ -1,50 +1,49 @@
-{% load static %}
+{% load static %}       <!-- codigo para poder usar imagenes -->
 
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html>     <!-- Se avisa al navegador que el codigo esta hecho con HTML -->
+<html lang="es">        <!-- Se define el 'idioma' de la web -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">       <!-- Se introduce que la pagina sea capaz de soportar distintos tipos de caracteres (ñ,á,ü) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">       <!-- Se introduce codigo para que la pagina sea capas de adaptarse a todo tipos de dispositivos (laptop, celulares, tablet, etc.) -->
     <title>Restablecer Contraseña - Aqua Conciencia</title>
 
-    <link rel="stylesheet" href="{% static 'css/creacion_cuenta.css' %}">
+    <link rel="stylesheet" href="{% static 'css/creacion_cuenta.css' %}">        <!-- Se establece el link de este archivo, al archivo de css llamdo 'restablecer_contraseña.css' para poder editar este archivo desde 'restablecer_contraseña.css' -->
 </head>
 
 <body>
 
     <div class="registro-card">
 
-        <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">
+        <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">      <!-- Se establece la imagen del logo en la pagina y con el identificador 'logo' para poder editar su posicionamiento-->
 
-        <div class="titulo">
-            <img src="{% static 'css/titulo.png' %}" alt="Agua Conciencia">
-        </div>
+        <h1 class="titulo">      <!-- Se establece el identificador 'titulo' para poder editarlo desde el css -->
+            <span class="azul">Aqua</span><br>      <!-- Se establce el color azul para 'Aqua' -->
+            <span class="verde">Conciencia</span>       <!-- Se establece el color verde para 'Conciencia' -->
+        </h1>
 
-        <h2>Restablecer Contraseña</h2>
+        <h2>Restablecer Contraseña</h2>     <!-- Se introduce texto 'Restablecer contraseña' en grande y en negrita -->
 
         <p style="text-align:center; margin-bottom:25px;">
             Ingresa el correo electrónico asociado 
-            a tu cuenta. 
+        a tu cuenta.                                    <!--- Se introduce el texto ' Ingresa el correo electrónico asociado a tu cuenta.  Recibirás un enlace para crear una nueva contraseña.' texto mas pequeño comparado al texto 'Restablecer contraseña' y sin estar en negrita -->
             Recibirás un enlace para crear una 
-            nueva contraseña.
+        nueva contraseña.
         </p>
 
         <form method="POST">
             {% csrf_token %}
 
             <label>Correo Electrónico</label>
-
-            <input
+           
+            <!-- Se establece que el usuario ingrese su correo electronico, dandole el ejemplo de como deberia ser (aquaconciencia@example.com), y con el 'type = email' se 'obliga' al usuario a poner un correo -->
+            <input          
                 type="email"
-                name="correo"
+                name="correo"                              
                 placeholder="aquaconciencia@example.com"
                 required
             >
-
-            <button
-                type="submit"
-                class="btn-crear"
-                formaction="{% url 'nueva_contraseña' %}">
+            <!-- Boton de 'continuar' siempre cuando se hayan cumplido los parametros anteriores -->
+            <button type="submit" class="btn-crear">
                 Continuar
             </button>
 
