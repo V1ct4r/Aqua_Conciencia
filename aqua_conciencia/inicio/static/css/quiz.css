@@ -1,0 +1,179 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(to bottom right,#35bfe6,#4dcceb,#66d8f2);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.contenedor{
+    width:95%;
+    max-width:1300px;
+    padding:40px;
+    border:2px solid rgba(0,0,0,.15);
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+/* ENCABEZADO */
+
+.encabezado{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:60px;
+}
+
+/* LOGO */
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo-icono{
+    width:70px;
+}
+
+.logo-texto{
+    width:220px;
+}
+
+/* MENU */
+
+.menu{
+    display:flex;
+    gap:15px;
+    background:#0b57b7;
+    padding:15px;
+    border-radius:18px;
+}
+
+.menu a{
+    background:#c6f43a;
+    color:black;
+    text-decoration:none;
+    padding:12px 30px;
+    border-radius:10px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.menu a:hover{
+    transform:scale(1.05);
+}
+
+/* ICONOS */
+
+.iconos{
+    display:flex;
+    gap:20px;
+}
+
+.icono{
+    width:40px;
+    transition:.3s;
+}
+
+.icono:hover{
+    transform:scale(1.1);
+}
+
+/* PANEL */
+
+.panel{
+    width:700px;
+    margin:auto;
+    background:#0b57b7;
+    border-radius:20px;
+    padding:35px;
+}
+
+/* QUIZZES */
+
+.quices{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.quiz-link{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#c6f43a;
+    color:black;
+    text-decoration:none;
+    font-weight:bold;
+    height:55px;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.quiz-link:hover{
+    transform:scale(1.05);
+}
+
+/* PROGRESO */
+
+.progreso{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    margin-top:40px;
+}
+
+.circulo{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    border:8px solid #c6f43a;
+}
+
+.texto-progreso{
+    color:white;
+}
+
+.texto-progreso h3{
+    font-size:22px;
+    margin:5px 0;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .encabezado{
+        flex-direction:column;
+        gap:25px;
+    }
+
+    .panel{
+        width:100%;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .quices{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:500px){
+
+    .quices{
+        grid-template-columns:1fr;
+    }
+
+}

@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado Quiz - Aqua Conciencia</title>
+
+    <link rel="stylesheet" href="{% static 'css/resultado_quiz.css' %}">
+</head>
+
+<body>
+
+<div class="background">
+
+    <div class="contenedor">
+
+        <!-- Logo -->
+        <header class="encabezado">
+
+            <div class="logo">
+                <img src="{% static 'css/logo2.png' %}" alt="Logo Aqua Conciencia" class="logo-icono">
+                <img src="{% static 'css/image 1.png' %}" alt="Aqua Conciencia" class="logo-texto">
+            </div>
+
+            <h1>🍃 ¡Quiz Finalizado! 🍃</h1>
+            <p class="subtitulo">
+                Gracias por participar. Revisa tu desempeño y aprende con tus errores.
+            </p>
+
+        </header>
+
+        <!-- Tarjeta principal -->
+        <main class="resultado-card">
+
+            <!-- Columna izquierda -->
+            <section class="panel-izquierdo">
+
+                <h2>Preguntas incorrectas</h2>
+
+                {% if errores %}
+
+                    {% for error in errores %}
+
+                    <article class="error-card">
+
+                        <div class="icono-error">
+                            💧
+                        </div>
+
+                        <div class="contenido-error">
+
+                            <h3>{{ forloop.counter }}. {{ error.pregunta }}</h3>
+
+                            <p>
+                                <strong>Tu respuesta:</strong>
+                                {{ error.respuesta }}
+                            </p>
+
+                            <div class="respuesta-correcta">
+
+                                <strong>Respuesta correcta</strong>
+
+                                <p>{{ error.correcta }}</p>
+
+                            </div>
+
+                            <div class="explicacion">
+
+                                {{ error.explicacion }}
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    {% endfor %}
+
+                {% else %}
+
+                    <div class="perfecto">
+
+                        <h2>🎉 ¡Excelente trabajo!</h2>
+
+                        <p>No tuviste respuestas incorrectas.</p>
+
+                    </div>
+
+                {% endif %}
+
+            </section>
+
+            <!-- Centro -->
+            <section class="panel-centro">
+
+                <div class="circulo">
+
+                    <div class="circulo-interno">
+
+                        <span class="puntaje">
+                            {{ correctas }}/{{ total }}
+                        </span>
+
+                        <span class="texto-puntaje">
+                            Respuestas correctas
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="estadisticas">
+
+                    <div class="estadistica">
+
+                        <h3>{{ correctas }}</h3>
+
+                        <span>Correctas</span>
+
+                    </div>
+
+                    <div class="estadistica">
+
+                        <h3>{{ total }}</h3>
+
+                        <span>Preguntas</span>
+
+                    </div>
+
+                </div>
+
+            </section>
+            <!-- Panel derecho -->
+            <aside class="panel-derecho">
+
+                <h2>Resumen</h2>
+
+                <div class="resumen-card">
+
+                    <div class="item">
+                        <span>✅ Correctas</span>
+                        <strong>{{ correctas }}</strong>
+                    </div>
+
+                    <div class="item">
+                        <span>❌ Incorrectas</span>
+                        <strong>{{ errores|length }}</strong>
+                    </div>
+
+                    <div class="item">
+                        <span>📝 Total</span>
+                        <strong>{{ total }}</strong>
+                    </div>
+
+                </div>
+
+                <div class="mensaje">
+
+                    <h3>¡Sigue aprendiendo! 💧</h3>
+
+                    <p>
+                        Revisa las respuestas incorrectas para fortalecer tus
+                        conocimientos sobre el cuidado del agua.
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </main>
+
+        <!-- Botones -->
+
+        <section class="acciones">
+
+    <a href="{% url 'quiz1' 1 %}" class="btn btn-repetir">
+        🔄 Repetir Quiz
+    </a>
+
+    <a href="{% url 'quiz_inicio' %}" class="btn btn-inicio">
+        🏠 Volver a los 12 Quiz
+    </a>
+
+</section>
+
+    </div>
+
+</div>
+
+</body>
+</html>

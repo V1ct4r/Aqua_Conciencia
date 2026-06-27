@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 1 - Aqua Conciencia</title>
+
+    <link rel="stylesheet" href="{% static 'css/quiz1.css' %}">
+</head>
+
+<body>
+
+<div class="contenedor">
+
+    <header class="encabezado">
+
+        <div class="logo">
+            <img src="{% static 'css/logo2.png' %}" class="logo-icono" alt="Logo">
+            <img src="{% static 'css/image 1.png' %}" class="logo-texto" alt="Aqua Conciencia">
+        </div>
+
+        <nav class="menu">
+            <a href="{% url 'panel' %}"><button>Mapa</button></a>
+            <a href="{% url 'quiz_inicio' %}"><button>Quiz</button></a>
+            <a href="{% url 'noticias' %}"><button>Curiosidades</button></a>
+            <button>Ayuda</button>
+        </nav>
+
+        <div class="iconos">
+
+            <a href="{% url 'panel' %}">
+                <img src="{% static 'css/logo.casa.png' %}" class="icono" alt="Inicio">
+            </a>
+
+            <a href="{% url 'perfil' %}">
+                <img src="{% static 'css/logo.usuario.png' %}" class="icono" alt="Perfil">
+            </a>
+
+        </div>
+
+    </header>
+
+    <section class="panel">
+
+        <div class="lado-izquierdo">
+
+            <div class="circulo"></div>
+
+            <div class="texto-progreso">
+                <h2>Progreso: {{ numero }}/{{ total }}</h2>
+                <h2>Completados: 0/12</h2>
+            </div>
+
+        </div>
+
+        <div class="tarjeta">
+
+            <div class="cabecera">
+                <h2>Pregunta {{ numero }} de {{ total }}</h2>
+            </div>
+
+            <div class="contenido">
+
+                <h3>{{ pregunta.pregunta }}</h3>
+
+                <form method="post">
+
+                    {% csrf_token %}
+
+                    {% for opcion in pregunta.opciones %}
+                    <label class="opcion">
+                        <input type="radio" name="respuesta" value="{{ opcion }}" required>
+                        {{ opcion }}
+                    </label>
+                    {% endfor %}
+
+                    <div class="botones">
+
+                        {% if numero > 1 %}
+                        <a href="{% url 'quiz1' numero|add:'-1' %}" class="volver">
+                            Volver
+                        </a>
+                        {% else %}
+                        <a href="{% url 'quiz_inicio' %}" class="volver">
+                            Volver
+                        </a>
+                        {% endif %}
+
+                        <button type="submit" class="btn-responder">
+                            {% if numero == total %}
+                                Finalizar
+                            {% else %}
+                                Siguiente
+                            {% endif %}
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+</body>
+</html>
