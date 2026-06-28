@@ -88,67 +88,112 @@ def manejar_quiz(request, preguntas, numero, resultado_url, template):
 
 def quiz1(request, numero):
     preguntas = [
-        {
-            "pregunta": "¿Cuál es la principal fuente de agua dulce del planeta?",
-            "opciones": ["Océanos", "Glaciares", "Ríos", "Lagos"],
-            "correcta": "Glaciares",
-            "explicacion": "La mayor parte del agua dulce del planeta está almacenada en glaciares."
-        },
-        {
-            "pregunta": "¿Qué acción ayuda a ahorrar agua?",
-            "opciones": ["Dejar la llave abierta", "Reparar fugas", "Lavar el auto todos los días", "Botar basura al río"],
-            "correcta": "Reparar fugas",
-            "explicacion": "Reparar fugas evita desperdiciar mucha agua."
-        },
-        {
-            "pregunta": "¿Qué contamina los ríos?",
-            "opciones": ["Reciclaje", "Basura", "Plantar árboles", "Cuidar humedales"],
-            "correcta": "Basura",
-            "explicacion": "La basura contamina los ríos y daña los ecosistemas."
-        },
-        {
-            "pregunta": "¿Cuál es un recurso natural?",
-            "opciones": ["Agua", "Plástico", "Vidrio", "Metal"],
-            "correcta": "Agua",
-            "explicacion": "El agua es un recurso natural esencial."
-        },
-        {
-            "pregunta": "¿Qué color representa el agua limpia?",
-            "opciones": ["Azul", "Rojo", "Negro", "Gris"],
-            "correcta": "Azul",
-            "explicacion": "El azul representa el agua limpia."
-        },
-        {
-            "pregunta": "¿Qué debemos hacer con el aceite usado?",
-            "opciones": ["Botarlo", "Punto limpio", "Río", "Enterrarlo"],
-            "correcta": "Punto limpio",
-            "explicacion": "Debe llevarse a un punto limpio."
-        },
-        {
-            "pregunta": "¿Qué ecosistema almacena agua?",
-            "opciones": ["Turberas", "Desiertos", "Playas", "Volcanes"],
-            "correcta": "Turberas",
-            "explicacion": "Las turberas almacenan agua y carbono."
-        },
-        {
-            "pregunta": "¿Cuál es efecto de contaminación?",
-            "opciones": ["Salud", "Biodiversidad", "Más peces", "Agua limpia"],
-            "correcta": "Biodiversidad",
-            "explicacion": "La contaminación reduce la biodiversidad."
-        },
-        {
-            "pregunta": "¿Quién necesita agua?",
-            "opciones": ["Todos", "Peces", "Plantas", "Humanos"],
-            "correcta": "Todos",
-            "explicacion": "Todos los seres vivos necesitan agua."
-        },
-        {
-            "pregunta": "¿Por qué cuidar el agua?",
-            "opciones": ["Es vital", "Sobra", "No sirve", "Es infinita"],
-            "correcta": "Es vital",
-            "explicacion": "El agua es indispensable para la vida."
-        }
-    ]
+    {
+        "pregunta": "¿Cuál de estos recursos es indispensable para la vida?",
+        "opciones": ["Agua", "Arena", "Petróleo", "Hierro"],
+        "correcta": "Agua",
+        "explicacion": "El agua es esencial para la vida de todos los seres vivos."
+    },
+    {
+        "pregunta": "¿Qué acción ayuda a ahorrar agua en casa?",
+        "opciones": [
+            "Cerrar la llave mientras te cepillas los dientes",
+            "Dejar correr el agua",
+            "Lavar la vereda con manguera todos los días",
+            "Jugar con agua durante horas"
+        ],
+        "correcta": "Cerrar la llave mientras te cepillas los dientes",
+        "explicacion": "Cerrar la llave mientras no la usas permite ahorrar muchos litros de agua."
+    },
+    {
+        "pregunta": "¿Quiénes necesitan agua para vivir?",
+        "opciones": [
+            "Solo las personas",
+            "Solo los animales",
+            "Solo las plantas",
+            "Todos los seres vivos"
+        ],
+        "correcta": "Todos los seres vivos",
+        "explicacion": "Personas, animales y plantas necesitan agua para vivir."
+    },
+    {
+        "pregunta": "¿Cuál de estos lugares contiene agua dulce?",
+        "opciones": [
+            "Un río",
+            "El océano",
+            "El mar",
+            "La playa"
+        ],
+        "correcta": "Un río",
+        "explicacion": "Los ríos contienen agua dulce, mientras que mares y océanos contienen agua salada."
+    },
+    {
+        "pregunta": "¿Qué debemos hacer si vemos basura cerca de un río?",
+        "opciones": [
+            "Recogerla y botarla donde corresponde",
+            "Empujarla al agua",
+            "Ignorarla",
+            "Enterrarla en la orilla"
+        ],
+        "correcta": "Recogerla y botarla donde corresponde",
+        "explicacion": "Mantener limpios los ríos ayuda a proteger la naturaleza."
+    },
+    {
+        "pregunta": "¿Cuál de estas acciones contamina el agua?",
+        "opciones": [
+            "Botar aceite por el lavaplatos",
+            "Cerrar la llave",
+            "Reciclar",
+            "Plantar árboles"
+        ],
+        "correcta": "Botar aceite por el lavaplatos",
+        "explicacion": "El aceite usado contamina grandes cantidades de agua."
+    },
+    {
+        "pregunta": "¿Por qué debemos cuidar el agua?",
+        "opciones": [
+            "Porque es necesaria para la vida",
+            "Porque cambia de color",
+            "Porque produce electricidad",
+            "Porque reemplaza el aire"
+        ],
+        "correcta": "Porque es necesaria para la vida",
+        "explicacion": "Sin agua no existiría la vida en nuestro planeta."
+    },
+    {
+        "pregunta": "¿Qué animal necesita agua limpia para vivir?",
+        "opciones": [
+            "Un pez",
+            "Un camello",
+            "Una gallina",
+            "Una hormiga"
+        ],
+        "correcta": "Un pez",
+        "explicacion": "Los peces viven en el agua y necesitan que esté limpia."
+    },
+    {
+        "pregunta": "¿Qué color representa normalmente el agua en mapas y dibujos?",
+        "opciones": [
+            "Azul",
+            "Rojo",
+            "Negro",
+            "Gris"
+        ],
+        "correcta": "Azul",
+        "explicacion": "El color azul representa ríos, lagos y océanos."
+    },
+    {
+        "pregunta": "¿Cuál es el objetivo principal de AquaConciencia?",
+        "opciones": [
+            "Enseñar a cuidar el agua y el medioambiente",
+            "Vender productos",
+            "Hablar solo de animales",
+            "Enseñar matemáticas"
+        ],
+        "correcta": "Enseñar a cuidar el agua y el medioambiente",
+        "explicacion": "AquaConciencia busca educar sobre la importancia del agua y su conservación."
+    }
+]
     return manejar_quiz(request, preguntas, numero, "resultado_quiz1", "inicio/quiz1.html")
 
 def resultado_quiz1(request):
@@ -170,67 +215,107 @@ def resultado_quiz1(request):
 
 def quiz2(request, numero):
     preguntas = [
-        {
-            "pregunta": "¿Qué función cumplen las turberas en el ecosistema?",
-            "opciones": ["Almacenar agua y carbono", "Producir petróleo", "Generar electricidad", "Crear plásticos"],
-            "correcta": "Almacenar agua y carbono",
-            "explicacion": "Las turberas son ecosistemas que almacenan grandes cantidades de agua y carbono."
-        },
-        {
-            "pregunta": "¿Qué impacto tiene la explotación de turberas en Chiloé?",
-            "opciones": ["Reduce reservas de agua dulce", "Aumenta la biodiversidad", "Mejora la calidad del aire", "No afecta"],
-            "correcta": "Reduce reservas de agua dulce",
-            "explicacion": "La explotación de turberas disminuye los reservorios naturales de agua dulce."
-        },
-        {
-            "pregunta": "¿Qué problema ambiental genera la salmonicultura?",
-            "opciones": ["Contaminación de aguas", "Purificación de ríos", "Aumento de oxígeno", "Mejora de ecosistemas"],
-            "correcta": "Contaminación de aguas",
-            "explicacion": "La salmonicultura libera antibióticos y desechos que contaminan el agua."
-        },
-        {
-            "pregunta": "¿Qué residuos afectan los ecosistemas acuáticos en la salmonicultura?",
-            "opciones": ["Antibióticos y desechos orgánicos", "Plásticos reciclados", "Fertilizantes naturales", "Energía solar"],
-            "correcta": "Antibióticos y desechos orgánicos",
-            "explicacion": "Los antibióticos y desechos orgánicos alteran el equilibrio de los ecosistemas."
-        },
-        {
-            "pregunta": "¿Por qué las turberas son consideradas ecosistemas frágiles?",
-            "opciones": ["Se regeneran lentamente", "Son muy resistentes", "No almacenan agua", "No tienen flora"],
-            "correcta": "Se regeneran lentamente",
-            "explicacion": "Las turberas tardan siglos en regenerarse, por eso son frágiles."
-        },
-        {
-            "pregunta": "¿Qué recurso natural se ve más afectado por la contaminación hídrica?",
-            "opciones": ["Agua", "Aire", "Suelo", "Energía"],
-            "correcta": "Agua",
-            "explicacion": "El agua es el recurso más afectado por la contaminación hídrica."
-        },
-        {
-            "pregunta": "¿Qué estrategia propone AquaConciencia para enseñar sobre contaminación hídrica?",
-            "opciones": ["Mapa interactivo", "Películas", "Música", "Juegos de fútbol"],
-            "correcta": "Mapa interactivo",
-            "explicacion": "La plataforma usa un mapa interactivo para mostrar zonas afectadas."
-        },
-        {
-            "pregunta": "¿Qué modelo educativo guía el proyecto AquaConciencia?",
-            "opciones": ["CDIO", "ISO", "ABC", "STEM"],
-            "correcta": "CDIO",
-            "explicacion": "El proyecto se basa en el modelo CDIO: Concebir, Diseñar, Implementar y Operar."
-        },
-        {
-            "pregunta": "¿Cuál es el objetivo principal de AquaConciencia?",
-            "opciones": ["Concientizar sobre el agua", "Vender salmones", "Explotar turberas", "Generar energía"],
-            "correcta": "Concientizar sobre el agua",
-            "explicacion": "El objetivo es educar y concientizar sobre la importancia del agua."
-        },
-        {
-            "pregunta": "¿Qué beneficio educativo aporta AquaConciencia?",
-            "opciones": ["Conciencia ambiental temprana", "Más contaminación", "Menos biodiversidad", "Explotación de recursos"],
-            "correcta": "Conciencia ambiental temprana",
-            "explicacion": "La plataforma busca que los estudiantes desarrollen conciencia ambiental desde pequeños."
-        }
-    ]
+    {
+        "pregunta": "¿Dónde se encuentra el archipiélago de Chiloé?",
+        "opciones": ["Región de Los Lagos", "Región de Atacama", "Región de Arica", "Región de Magallanes"],
+        "correcta": "Región de Los Lagos",
+        "explicacion": "Chiloé pertenece a la Región de Los Lagos, en el sur de Chile."
+    },
+    {
+        "pregunta": "¿Qué ecosistema de Chiloé almacena grandes cantidades de agua?",
+        "opciones": ["Turberas", "Desiertos", "Playas", "Volcanes"],
+        "correcta": "Turberas",
+        "explicacion": "Las turberas funcionan como enormes esponjas que almacenan agua."
+    },
+    {
+        "pregunta": "¿Por qué es importante cuidar los ríos de Chiloé?",
+        "opciones": [
+            "Porque entregan agua a personas, animales y plantas",
+            "Porque producen petróleo",
+            "Porque contienen agua salada",
+            "Porque no tienen vida"
+        ],
+        "correcta": "Porque entregan agua a personas, animales y plantas",
+        "explicacion": "Los ríos son fundamentales para la vida de los ecosistemas y las comunidades."
+    },
+    {
+        "pregunta": "¿Cuál de estas acciones contamina un río?",
+        "opciones": [
+            "Botar basura",
+            "Reciclar",
+            "Plantar árboles",
+            "Ahorrar agua"
+        ],
+        "correcta": "Botar basura",
+        "explicacion": "La basura daña la calidad del agua y afecta a los seres vivos."
+    },
+    {
+        "pregunta": "¿Qué animal vive en ambientes acuáticos y necesita agua limpia?",
+        "opciones": [
+            "Pez",
+            "Cóndor",
+            "Caballo",
+            "Zorro"
+        ],
+        "correcta": "Pez",
+        "explicacion": "Los peces necesitan agua limpia para sobrevivir."
+    },
+    {
+        "pregunta": "¿Qué debemos hacer con las botellas plásticas después de usarlas?",
+        "opciones": [
+            "Reciclarlas",
+            "Botarlas al río",
+            "Quemarlas",
+            "Dejarlas en la playa"
+        ],
+        "correcta": "Reciclarlas",
+        "explicacion": "El reciclaje evita que los plásticos lleguen a los ríos y mares."
+    },
+    {
+        "pregunta": "¿Qué sucede cuando el agua está contaminada?",
+        "opciones": [
+            "Se afectan las plantas, animales y personas",
+            "Se vuelve más limpia",
+            "Aumenta la cantidad de peces",
+            "No ocurre nada"
+        ],
+        "correcta": "Se afectan las plantas, animales y personas",
+        "explicacion": "La contaminación perjudica a todos los seres vivos."
+    },
+    {
+        "pregunta": "¿Qué acción ayuda a proteger el agua?",
+        "opciones": [
+            "Usar solo el agua necesaria",
+            "Dejar la llave abierta",
+            "Botar aceite al lavaplatos",
+            "Lavar autos en un río"
+        ],
+        "correcta": "Usar solo el agua necesaria",
+        "explicacion": "Usar el agua de forma responsable ayuda a conservar este recurso."
+    },
+    {
+        "pregunta": "¿Cuál es uno de los objetivos de AquaConciencia?",
+        "opciones": [
+            "Enseñar a cuidar el agua",
+            "Vender productos",
+            "Enseñar solo historia",
+            "Construir carreteras"
+        ],
+        "correcta": "Enseñar a cuidar el agua",
+        "explicacion": "La plataforma busca crear conciencia sobre la importancia del agua."
+    },
+    {
+        "pregunta": "¿Qué beneficio tiene cuidar el agua hoy?",
+        "opciones": [
+            "Que las futuras generaciones también puedan disfrutarla",
+            "Que haya menos lluvia",
+            "Que desaparezcan los ríos",
+            "Que aumente la contaminación"
+        ],
+        "correcta": "Que las futuras generaciones también puedan disfrutarla",
+        "explicacion": "Cuidar el agua asegura este recurso para las personas del futuro."
+    }
+]
     return manejar_quiz(request, preguntas, numero, "resultado_quiz2", "inicio/quiz1.html")
 
 def resultado_quiz2(request):
@@ -252,67 +337,117 @@ def resultado_quiz2(request):
 
 def quiz3(request, numero):
     preguntas = [
-        {
-            "pregunta": "¿Qué ecosistema de Chiloé ayuda a regular el agua?",
-            "opciones": ["Turberas", "Desiertos", "Playas", "Volcanes"],
-            "correcta": "Turberas",
-            "explicacion": "Las turberas almacenan agua y carbono, regulando el ciclo hídrico."
-        },
-        {
-            "pregunta": "¿Qué actividad humana afecta más a los ecosistemas acuáticos de Chiloé?",
-            "opciones": ["Industria salmonera", "Agricultura orgánica", "Turismo sustentable", "Reforestación"],
-            "correcta": "Industria salmonera",
-            "explicacion": "La salmonicultura genera contaminación por antibióticos y desechos."
-        },
-        {
-            "pregunta": "¿Qué recurso natural es vital para la vida en Chiloé?",
-            "opciones": ["Agua", "Petróleo", "Carbón", "Hierro"],
-            "correcta": "Agua",
-            "explicacion": "El agua es indispensable para la vida y los ecosistemas."
-        },
-        {
-            "pregunta": "¿Qué impacto tiene la contaminación hídrica en la biodiversidad?",
-            "opciones": ["Reduce especies", "Aumenta peces", "Mejora ecosistemas", "No afecta"],
-            "correcta": "Reduce especies",
-            "explicacion": "La contaminación disminuye la biodiversidad y afecta el equilibrio ecológico."
-        },
-        {
-            "pregunta": "¿Qué estrategia educativa propone AquaConciencia?",
-            "opciones": ["Mapa interactivo", "Películas", "Canciones", "Deportes"],
-            "correcta": "Mapa interactivo",
-            "explicacion": "La plataforma usa un mapa interactivo para mostrar zonas afectadas."
-        },
-        {
-            "pregunta": "¿Qué modelo educativo guía el proyecto AquaConciencia?",
-            "opciones": ["CDIO", "ISO", "ABC", "STEM"],
-            "correcta": "CDIO",
-            "explicacion": "El proyecto se basa en el modelo CDIO: Concebir, Diseñar, Implementar y Operar."
-        },
-        {
-            "pregunta": "¿Qué beneficio aporta AquaConciencia a los estudiantes?",
-            "opciones": ["Conciencia ambiental temprana", "Más contaminación", "Menos biodiversidad", "Explotación de recursos"],
-            "correcta": "Conciencia ambiental temprana",
-            "explicacion": "Busca que los estudiantes comprendan la importancia de cuidar el agua desde pequeños."
-        },
-        {
-            "pregunta": "¿Qué recurso se pierde con la explotación de turberas?",
-            "opciones": ["Agua dulce", "Petróleo", "Gas natural", "Metales"],
-            "correcta": "Agua dulce",
-            "explicacion": "Las turberas son reservorios naturales de agua dulce."
-        },
-        {
-            "pregunta": "¿Qué tipo de contaminación afecta más a los ríos de Chiloé?",
-            "opciones": ["Desechos orgánicos y químicos", "Ruido", "Luz artificial", "Radiación"],
-            "correcta": "Desechos orgánicos y químicos",
-            "explicacion": "Los desechos de la salmonicultura contaminan los ríos y mares."
-        },
-        {
-            "pregunta": "¿Cuál es el objetivo principal de AquaConciencia?",
-            "opciones": ["Educar sobre el agua", "Explotar turberas", "Vender salmones", "Generar energía"],
-            "correcta": "Educar sobre el agua",
-            "explicacion": "El objetivo es concientizar sobre la importancia del agua y los ecosistemas."
-        }
-    ]
+    {
+        "pregunta": "¿Qué es una cuenca hidrográfica?",
+        "opciones": [
+            "Un lugar donde el agua de lluvia llega a un mismo río o lago",
+            "Un tipo de pez",
+            "Una montaña",
+            "Una playa"
+        ],
+        "correcta": "Un lugar donde el agua de lluvia llega a un mismo río o lago",
+        "explicacion": "Una cuenca reúne toda el agua que escurre hacia un mismo río, lago o mar."
+    },
+    {
+        "pregunta": "¿Qué ocurre cuando se tala un bosque cerca de un río?",
+        "opciones": [
+            "Aumenta la erosión del suelo",
+            "El agua se vuelve más limpia",
+            "No ocurre nada",
+            "El río desaparece"
+        ],
+        "correcta": "Aumenta la erosión del suelo",
+        "explicacion": "Los árboles ayudan a sujetar el suelo y evitan que llegue sedimento al río."
+    },
+    {
+        "pregunta": "¿Qué animal necesita agua limpia para sobrevivir?",
+        "opciones": [
+            "La ranita de Darwin",
+            "El camello",
+            "El avestruz",
+            "El canguro"
+        ],
+        "correcta": "La ranita de Darwin",
+        "explicacion": "La ranita de Darwin vive en ambientes húmedos y necesita agua limpia."
+    },
+    {
+        "pregunta": "¿Por qué es importante cuidar los humedales?",
+        "opciones": [
+            "Porque almacenan agua y son hogar de muchas especies",
+            "Porque producen plástico",
+            "Porque generan petróleo",
+            "Porque secan los ríos"
+        ],
+        "correcta": "Porque almacenan agua y son hogar de muchas especies",
+        "explicacion": "Los humedales ayudan a conservar el agua y la biodiversidad."
+    },
+    {
+        "pregunta": "¿Cuál de estas acciones ayuda a disminuir la contaminación del agua?",
+        "opciones": [
+            "Reciclar correctamente",
+            "Botar aceite al lavaplatos",
+            "Lanzar basura al río",
+            "Quemar residuos"
+        ],
+        "correcta": "Reciclar correctamente",
+        "explicacion": "Reciclar evita que muchos residuos lleguen a ríos y mares."
+    },
+    {
+        "pregunta": "¿Qué función cumplen las plantas cercanas a los ríos?",
+        "opciones": [
+            "Filtran contaminantes y protegen las orillas",
+            "Ensucian el agua",
+            "Impiden que llueva",
+            "Aumentan la contaminación"
+        ],
+        "correcta": "Filtran contaminantes y protegen las orillas",
+        "explicacion": "La vegetación ayuda a mantener el agua más limpia."
+    },
+    {
+        "pregunta": "¿Qué significa usar el agua de manera responsable?",
+        "opciones": [
+            "Utilizar solo la necesaria y evitar desperdiciarla",
+            "Dejar correr la llave",
+            "Usarla sin pensar",
+            "Gastar toda el agua posible"
+        ],
+        "correcta": "Utilizar solo la necesaria y evitar desperdiciarla",
+        "explicacion": "Cada persona puede ayudar ahorrando agua en su vida diaria."
+    },
+    {
+        "pregunta": "¿Qué sucede si un río está muy contaminado?",
+        "opciones": [
+            "Las plantas y animales pueden morir",
+            "El agua mejora",
+            "Aumentan los peces",
+            "No ocurre nada"
+        ],
+        "correcta": "Las plantas y animales pueden morir",
+        "explicacion": "La contaminación afecta a todos los seres vivos que dependen del río."
+    },
+    {
+        "pregunta": "¿Cuál de estos lugares almacena grandes cantidades de agua dulce?",
+        "opciones": [
+            "Las turberas",
+            "Los estacionamientos",
+            "Las carreteras",
+            "Los edificios"
+        ],
+        "correcta": "Las turberas",
+        "explicacion": "Las turberas funcionan como enormes esponjas naturales."
+    },
+    {
+        "pregunta": "¿Qué podemos hacer para cuidar el agua en nuestra escuela?",
+        "opciones": [
+            "Cerrar bien las llaves y avisar si hay fugas",
+            "Dejar correr el agua",
+            "Botar basura en el patio",
+            "Lavar constantemente las veredas"
+        ],
+        "correcta": "Cerrar bien las llaves y avisar si hay fugas",
+        "explicacion": "Pequeñas acciones ayudan a ahorrar mucha agua."
+    }
+]
     return manejar_quiz(request, preguntas, numero, "resultado_quiz3", "inicio/quiz1.html")
 
 def resultado_quiz3(request):
@@ -334,67 +469,117 @@ def resultado_quiz3(request):
 
 def quiz4(request, numero):
     preguntas = [
-        {
-            "pregunta": "¿Qué acción ayuda a reducir la contaminación hídrica?",
-            "opciones": ["Reparar fugas", "Botar basura al río", "Usar más plásticos", "Contaminar turberas"],
-            "correcta": "Reparar fugas",
-            "explicacion": "Reparar fugas evita el desperdicio de agua y reduce la presión sobre los ecosistemas."
-        },
-        {
-            "pregunta": "¿Qué debemos hacer con el aceite usado?",
-            "opciones": ["Llevarlo a un punto limpio", "Botarlo al río", "Enterrarlo", "Quemarlo"],
-            "correcta": "Llevarlo a un punto limpio",
-            "explicacion": "El aceite usado debe ser reciclado en puntos limpios para evitar contaminación."
-        },
-        {
-            "pregunta": "¿Qué práctica ayuda a proteger las turberas?",
-            "opciones": ["Evitar su explotación", "Quemarlas", "Usarlas como vertedero", "Drenarlas"],
-            "correcta": "Evitar su explotación",
-            "explicacion": "Las turberas deben conservarse porque almacenan agua y carbono."
-        },
-        {
-            "pregunta": "¿Qué acción comunitaria fomenta la conciencia ambiental?",
-            "opciones": ["Educación ambiental", "Contaminación", "Deforestación", "Explotación indiscriminada"],
-            "correcta": "Educación ambiental",
-            "explicacion": "La educación ambiental ayuda a que las comunidades comprendan y cuiden sus recursos."
-        },
-        {
-            "pregunta": "¿Qué recurso debemos cuidar para mantener la vida?",
-            "opciones": ["Agua", "Plástico", "Petróleo", "Carbón"],
-            "correcta": "Agua",
-            "explicacion": "El agua es vital para todos los seres vivos."
-        },
-        {
-            "pregunta": "¿Qué acción reduce la contaminación de ríos?",
-            "opciones": ["No botar basura", "Usar pesticidas", "Explotar turberas", "Verter químicos"],
-            "correcta": "No botar basura",
-            "explicacion": "Evitar botar basura en ríos protege la biodiversidad acuática."
-        },
-        {
-            "pregunta": "¿Qué estrategia propone AquaConciencia para enseñar sobre el agua?",
-            "opciones": ["Mapa interactivo", "Películas", "Canciones", "Deportes"],
-            "correcta": "Mapa interactivo",
-            "explicacion": "La plataforma usa un mapa interactivo para mostrar zonas afectadas."
-        },
-        {
-            "pregunta": "¿Qué modelo educativo guía AquaConciencia?",
-            "opciones": ["CDIO", "ISO", "ABC", "STEM"],
-            "correcta": "CDIO",
-            "explicacion": "El proyecto se basa en el modelo CDIO: Concebir, Diseñar, Implementar y Operar."
-        },
-        {
-            "pregunta": "¿Qué beneficio aporta AquaConciencia a los estudiantes?",
-            "opciones": ["Conciencia ambiental temprana", "Más contaminación", "Menos biodiversidad", "Explotación de recursos"],
-            "correcta": "Conciencia ambiental temprana",
-            "explicacion": "Busca que los estudiantes comprendan la importancia de cuidar el agua desde pequeños."
-        },
-        {
-            "pregunta": "¿Qué acción personal ayuda a cuidar el agua?",
-            "opciones": ["Cerrar la llave al cepillarse", "Dejar la llave abierta", "Lavar el auto todos los días", "Botar químicos al río"],
-            "correcta": "Cerrar la llave al cepillarse",
-            "explicacion": "Cerrar la llave mientras te cepillas los dientes ahorra litros de agua diariamente."
-        }
-    ]
+    {
+        "pregunta": "¿Qué función cumplen las turberas en Chiloé?",
+        "opciones": [
+            "Almacenan agua y carbono",
+            "Producen electricidad",
+            "Generan petróleo",
+            "Fabrican oxígeno"
+        ],
+        "correcta": "Almacenan agua y carbono",
+        "explicacion": "Las turberas almacenan grandes cantidades de agua y carbono, ayudando al equilibrio del ecosistema."
+    },
+    {
+        "pregunta": "¿Qué actividad económica de Chiloé puede contaminar el agua si no se controla adecuadamente?",
+        "opciones": [
+            "Salmonicultura",
+            "Apicultura",
+            "Artesanía",
+            "Turismo rural"
+        ],
+        "correcta": "Salmonicultura",
+        "explicacion": "La salmonicultura puede generar contaminación por residuos y uso de medicamentos."
+    },
+    {
+        "pregunta": "¿Qué ocurre cuando los residuos llegan a un río?",
+        "opciones": [
+            "Se afecta la vida de plantas y animales",
+            "El agua se vuelve potable",
+            "Aumenta la biodiversidad",
+            "No ocurre nada"
+        ],
+        "correcta": "Se afecta la vida de plantas y animales",
+        "explicacion": "Los residuos contaminan el agua y dañan los ecosistemas acuáticos."
+    },
+    {
+        "pregunta": "¿Cuál de estas acciones ayuda a proteger las turberas?",
+        "opciones": [
+            "Evitar su extracción",
+            "Quemarlas",
+            "Construir sobre ellas",
+            "Botar basura"
+        ],
+        "correcta": "Evitar su extracción",
+        "explicacion": "Las turberas tardan cientos de años en formarse, por lo que deben protegerse."
+    },
+    {
+        "pregunta": "¿Por qué el agua es importante para los animales?",
+        "opciones": [
+            "Porque la necesitan para vivir",
+            "Porque cambia su color",
+            "Porque produce alimentos",
+            "Porque reemplaza el aire"
+        ],
+        "correcta": "Porque la necesitan para vivir",
+        "explicacion": "Todos los seres vivos necesitan agua para sobrevivir."
+    },
+    {
+        "pregunta": "¿Qué acción ayuda a mantener limpios los ríos?",
+        "opciones": [
+            "Recoger la basura",
+            "Lanzar envases plásticos",
+            "Botar aceite",
+            "Verter detergentes"
+        ],
+        "correcta": "Recoger la basura",
+        "explicacion": "Mantener los ríos limpios protege la flora, fauna y la salud de las personas."
+    },
+    {
+        "pregunta": "¿Qué efecto tiene la contaminación del agua sobre los peces?",
+        "opciones": [
+            "Puede enfermarlos o provocar su muerte",
+            "Los hace crecer más",
+            "No les afecta",
+            "Los vuelve más rápidos"
+        ],
+        "correcta": "Puede enfermarlos o provocar su muerte",
+        "explicacion": "Los contaminantes disminuyen la calidad del agua y afectan a los peces."
+    },
+    {
+        "pregunta": "¿Qué podemos hacer para cuidar el agua en nuestra casa?",
+        "opciones": [
+            "Reparar llaves que gotean",
+            "Dejar correr el agua",
+            "Lavar el auto todos los días",
+            "Usar la manguera para limpiar"
+        ],
+        "correcta": "Reparar llaves que gotean",
+        "explicacion": "Una pequeña fuga puede desperdiciar mucha agua durante el día."
+    },
+    {
+        "pregunta": "¿Qué significa proteger la biodiversidad?",
+        "opciones": [
+            "Cuidar todas las especies de seres vivos",
+            "Eliminar plantas",
+            "Construir más ciudades",
+            "Extraer todos los recursos naturales"
+        ],
+        "correcta": "Cuidar todas las especies de seres vivos",
+        "explicacion": "La biodiversidad incluye todos los seres vivos y los ecosistemas donde habitan."
+    },
+    {
+        "pregunta": "¿Cuál es el principal objetivo de AquaConciencia?",
+        "opciones": [
+            "Educar sobre el cuidado del agua y el medioambiente",
+            "Vender productos",
+            "Construir carreteras",
+            "Extraer recursos naturales"
+        ],
+        "correcta": "Educar sobre el cuidado del agua y el medioambiente",
+        "explicacion": "AquaConciencia busca enseñar de forma interactiva la importancia de proteger el agua."
+    }
+]
     return manejar_quiz(request, preguntas, numero, "resultado_quiz4", "inicio/quiz1.html")
 
 def resultado_quiz4(request):

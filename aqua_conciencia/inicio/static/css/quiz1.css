@@ -53,10 +53,12 @@ body{
     background:#0b57b7;
     padding:15px 20px;
     border-radius:18px;
+
+    border:3px solid black;
 }
 
-.menu button{
-    border:none;
+.menu button {
+    border: 2px solid white;   /* borde blanco */
     background:#d8ff38;
     padding:12px 28px;
     border-radius:10px;
@@ -78,9 +80,10 @@ body{
 }
 
 .icono{
-    width:42px;
+    width:55px;
     cursor:pointer;
     transition:.3s;
+    filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.4));
 }
 
 .icono:hover{
@@ -99,11 +102,12 @@ body{
     padding:35px;
     box-shadow:0 12px 25px rgba(0,0,0,.25);
 
+    border:3px solid black;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
-
 /*=========================
       LADO IZQUIERDO
 =========================*/
@@ -162,6 +166,8 @@ body{
     border-radius:18px;
     overflow:hidden;
     box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+    border:3px solid black;
 }
 
 .cabecera{
@@ -232,8 +238,8 @@ body{
 .volver{
     display:inline-block;
     text-decoration:none;
-    color:white;
-    background:#0b57b7;
+    color:black;
+    background:#d8ff38;
     padding:12px 22px;
     border-radius:10px;
     font-size:15px;
@@ -242,9 +248,8 @@ body{
 }
 
 .volver:hover{
-    background:#094897;
+    background:#ebff76;
 }
-
 .btn-responder{
     border:none;
     background:#d8ff38;
