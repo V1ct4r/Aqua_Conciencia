@@ -163,7 +163,34 @@ font-weight:bold;
 cursor:pointer;
 }
 
+a.btn-verde {
+    background: #8adf43;
+    border: 2px solid black;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+}
 
+.acciones form {
+    margin: 0;
+    padding: 0;
+}
+
+.acciones .btn-verde {
+    height: 47px;
+    line-height: normal;
+    font-size: 14px;
+}
+
+.acciones a.btn-verde {
+    height: 47px;
+    line-height: 23px;
+    font-size: 14px;
+}
 
 .progreso-panel{
 flex:1;

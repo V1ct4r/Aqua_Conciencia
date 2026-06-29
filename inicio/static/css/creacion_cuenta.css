@@ -42,29 +42,23 @@ width:760px;
 background:white;
 border-radius:10px;
 padding:60px;
+padding-top: 160px;
 position:relative;
 box-shadow:0 0 15px rgba(0,0,0,.2);
 }
 
 .logo{
-width:130px;
+width: 130px;
 position:absolute;
-top:-40px;
-left:30px;
+top:20px;
+left:60px;
 }
 
-.titulo{
-text-align:center;
-margin-bottom:40px;
-line-height:1;
-}
-
-.azul{
-color:#0b5fa5;
-}
-
-.verde{
-color:#3cab3c;
+.logo-titulo{
+width: 200px;
+position:absolute;
+top:47px;
+left: 280px;
 }
 
 form{
@@ -90,7 +84,7 @@ margin:40px auto 0;
 width:180px;
 height:50px;
 border:none;
-background:#39d739;
+background:#2E9E3E;
 color:white;
 font-size:18px;
 border-radius:5px;

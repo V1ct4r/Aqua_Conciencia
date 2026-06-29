@@ -98,14 +98,14 @@
             <div class="acciones">       <!-- Se establece el identificador 'acciones' para poder editarlo desde el css -->
 
 
-                <button class="btn-verde">       <!-- Se establece el identificador 'btn-verde' para poder editarlo desde el css -->
-                    Cerrar sesión       <!-- Se establece texto del boton -->
+                <form method="POST" action="{% url 'cerrar_sesion' %}">
+                 {% csrf_token %}
+                <button type="submit" class="btn-verde">
+                 Cerrar sesión
                 </button>
-
-                <button class="btn-verde">       <!-- Se establece el identificador 'btn-verde' para poder editarlo desde el css -->
-                   Borrar cuenta        <!-- Se establce texto del boton -->
-                </button>
-
+                </form>
+                
+                <a href="{% url 'borrar_cuenta' %}" class="btn-verde">Borrar cuenta</a>
             </div>
 
         </div>

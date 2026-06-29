@@ -13,17 +13,14 @@
 <body>
 
     <div class="registro-card">
-
+        <div class="area-logo">
         <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">      <!-- Se establece la imagen del logo en la pagina y con el identificador 'logo' para poder editar su posicionamiento-->
+        <img src="{% static 'css/titulo.png' %}" alt="Aqua Conciencia" class="logo-titulo">
+        </div>
 
-        <h1 class="titulo">      <!-- Se establece el identificador 'titulo' para poder editarlo desde el css -->
-            <span class="azul">Aqua</span><br>      <!-- Se establce el color azul para 'Aqua' -->
-            <span class="verde">Conciencia</span>       <!-- Se establece el color verde para 'Conciencia' -->
-        </h1>
+        <h2 class="titulo-a">Restablecer Contraseña</h2>     <!-- Se introduce texto 'Restablecer contraseña' en grande y en negrita -->
 
-        <h2>Restablecer Contraseña</h2>     <!-- Se introduce texto 'Restablecer contraseña' en grande y en negrita -->
-
-        <p style="text-align:center; margin-bottom:25px;">
+        <p class="descripcion">
             Ingresa el correo electrónico asociado 
         a tu cuenta.                                    <!--- Se introduce el texto ' Ingresa el correo electrónico asociado a tu cuenta.  Recibirás un enlace para crear una nueva contraseña.' texto mas pequeño comparado al texto 'Restablecer contraseña' y sin estar en negrita -->
             Recibirás un enlace para crear una 
@@ -52,4 +49,4 @@
     </div>
 
 </body>
-</html>
+</html> 

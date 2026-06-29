@@ -11,4 +11,7 @@ urlpatterns = [
     path('foro/', views.foro, name='foro'),
     path('perfil/', views.perfil, name='perfil'),
     path('configuracion/', views.configuracion, name='configuracion'),
+    path('cerrar-sesion/', views.cerrar_sesion, name='cerrar_sesion'), 
+    path('borrar-cuenta/', views.borrar_cuenta, name='borrar_cuenta'),
+    path('comuna/<str:nombre>/', views.comuna, name='comuna'),
 ]

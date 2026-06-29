@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrar cuenta</title>
+    <link rel="stylesheet" href="{% static 'css/borrar_cuenta.css' %}">
+</head>
+
+<body>
+<div class="login-container">
+
+    <div class="caja-blanca">
+            <img src="{% static 'css/logo.png' %}" alt="Aqua Conciencia" class="logo-area">
+            <img src="{% static 'css/titulo.png' %}" alt="Aqua Conciencia" class="logo-titulo">
+
+        <form method="POST" class="formulario">
+            {% csrf_token %}
+            <label>Escriba su contraseña</label>
+            <div class="campo-password">
+                <input type="password" name="password" required id="password">
+                <span class="toggle-password" onclick="togglePassword()">👁️</span>
+            </div>
+         
+            <label>Reescriba su contraseña</label>
+            <div class="campo-password">
+                <input type="password" name="confirm_password" required id="confirm_password">
+                <span class="toggle-password" onclick="togglePassword()">👁️</span>
+            </div>
+
+       <div class="acciones">       <!-- Se establece el identificador 'acciones' para poder editarlo desde el css -->
+                <button type="button" class="btn-borrar">         <!-- Se establece el identificador 'btn-crear' para poder editarlo desde el css -->
+                    Borrar cuenta
+                </button>
+
+            <a href="{% url 'restablecer' %}" class="btn-restablecer">
+                Olvido su contraseña?
+            </a>
+           
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

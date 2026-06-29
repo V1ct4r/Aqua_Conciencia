@@ -19,22 +19,11 @@ body{
 }
 
 .logo{
-    width:140px;
-    margin-bottom:15px;
+    margin-left: -20px;
 }
 
-.titulo{
-    font-size:50px;
-    margin-bottom:40px;
-    line-height:1;
-}
-
-.azul{
-    color:#0b5f8d;
-}
-
-.verde{
-    color:#7ed957;
+.logo-area{
+    margin-bottom:50px;
 }
 
 .formulario{
@@ -63,7 +52,7 @@ body{
 .btn-login{
     width:240px;
     padding:16px;
-    background:#9be000;
+    background:#2E9E3E;
     color:white;
     border:none;
     border-radius:4px;
@@ -75,7 +64,7 @@ body{
 .btn-crear{
     width:240px;
     padding:16px;
-    background:#9be000;
+    background:#2E9E3E;
     color:white;
     border:none;
     border-radius:4px;
@@ -113,10 +102,11 @@ body{
     display:block;
     margin-top:30px;
     text-decoration:none;
-    color:#2b4c5c;
+    color:#2E9E3E;
     font-size:18px;
 }
 
 .restablecer:hover{
     text-decoration:underline;
-}
+    color:#2E9E3E;
+} 

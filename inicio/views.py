@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import authenticate, login
+from django.contrib.auth import logout
 def inicio(request):
 
     if request.method == 'POST':
@@ -64,3 +65,28 @@ from django.contrib.auth import authenticate, login, logout
 def cerrar_sesion(request):
     logout(request)
     return redirect('inicio')
+
+def borrar_cuenta(request):
+    if request.method == 'POST':
+        password = request.POST.get('password')
+        confirm_password = request.POST.get('confirm_password')
+        
+      
+        if password != confirm_password:
+            return render(request, 'inicio/borrar_cuenta.html', {
+                'error': 'Las contraseñas no coinciden'
+            })
+        
+        if request.user.check_password(password):
+            request.user.delete()      
+            logout(request)             
+            return redirect('inicio')   
+        else:
+            return render(request, 'inicio/borrar_cuenta.html', {
+                'error': 'Contraseña incorrecta'
+            })
+    
+    return render(request, 'inicio/borrar_cuenta.html')
+
+def comuna(request, nombre):
+    return render(request, f'inicio/comuna_{nombre}_mapa.html')

@@ -14,12 +14,8 @@
     <div class="registro-card">           <!-- Se establece el identificador 'registro-card' para poder editarlo desde el css -->
 
     <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">      <!-- Se ingresa el logo de 'AquaConciencia' -->
-
-    <!-- Se ingresa el titulo de la pagina 'AquaConciencia' -->
-    <h1 class="titulo">
-        <span class="azul">Aqua</span><br>
-        <span class="verde">Conciencia</span>
-    </h1>
+    <img src="{% static 'css/titulo.png' %}" alt="Aqua Conciencia" class="logo-titulo">
+    
 
     <form method="POST">
         {% csrf_token %}

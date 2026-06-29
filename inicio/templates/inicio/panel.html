@@ -1,120 +1,112 @@
-{% load static %}       <!-- codigo para poder usar imagenes -->
-
+{% load static %}
+ 
 <!DOCTYPE html>
-<html lang="es">        <!-- Se define el 'idioma' de la web -->
+<html lang="es">
 <head>
-    <meta charset="UTF-8">       <!-- Se introduce que la pagina sea capaz de soportar distintos tipos de caracteres (ñ,á,ü) -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">       <!-- Se introduce codigo para que la pagina sea capas de adaptarse a todo tipos de dispositivos (laptop, celulares, tablet, etc.) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AquaConciencia</title>
-
-    <link rel="stylesheet" href="{% static 'css/panel.css' %}">      <!-- Se establece el link de este archivo, al archivo de css llamdo 'panel.css' para poder editar este archivo desde 'panel.css' -->
+    <link rel="stylesheet" href="{% static 'css/panel.css' %}">
 </head>
 <body>
-
+ 
 <div class="contenedor">
-
+ 
     <header>
-
+ 
         <div class="logo">
-            <img src="{% static 'css/logo.png' %}" alt="Logo AquaConciencia">        <!-- Se establece la imagen del logo en la pagina y con el identificador 'logo AquaConciencia' para poder editar su posicionamiento-->
-
-            <!-- Se establece el titulo 'Aqua Conciencia' con el identificador 'texto-logo' para editar su posicionamiento desde css-->
+            <img src="{% static 'css/logo.png' %}" alt="Logo AquaConciencia">
             <div class="texto-logo">
                 <h1>Aqua</h1>
                 <h1>Conciencia</h1>
             </div>
         </div>
-
+ 
         <nav class="menu">
             <a href="{% url 'panel' %}">Mapa</a>
             <a href="#">Quiz</a>
-            <a href="#">Curiosidades</a>
             <a href="#">Ayuda</a>
         </nav>
-
+ 
         <div class="iconos">
-
-            <a href="{% url 'panel' %}">      
-                <img src="{% static 'css/logo.casa.png' %}" alt="Inicio">       <!-- Se establece el icono del logo de la 'casa' -->
+            <a href="{% url 'panel' %}">
+                <img src="{% static 'css/logo.casa.png' %}" alt="Inicio">
             </a>
-
-               <!-- Se establece el icono del perfil y se establece que al seleccionarlo rediriga al usuario a 'perfil' -->
             <a href="{% url 'perfil' %}">
                 <img src="{% static 'css/logo.usuario.png' %}" alt="Usuario">
             </a>
-
         </div>
-
+ 
     </header>
+ 
+    <div class="dashboard">
+ 
+        <div class="principal">
+ 
+            <div class="mapa">
+ 
+                <div class="mapa-wrapper" id="mapaWrapper">
+ 
+                    <img
+                        src="{% static 'css/logo_para_aquaconciencia.png' %}"
+                        alt="Mapa de Chiloé"
+                        class="imagen-mapa"
+                        id="imagenMapa"
+                    >
+ 
+                    <a class="punto-comuna" href="{% url 'comuna' 'ancud' %}"
+                    style="left: 44%; top: 24.2%;" title="Ancud"></a>
 
-    <div class="dashboard">     <!-- Se establece el identificador 'dashboard' para poder editarlo desde el css -->
+                    <a class="punto-comuna" href="{% url 'comuna' 'quemchi' %}"
+                    style="left: 68.1%; top: 35%;" title="Quemchi"></a>
 
-        
-        <div class="principal">      <!-- Se establece el identificador 'principal' para poder editarlo desde el css -->
+                    <a class="punto-comuna" href="{% url 'comuna' 'dalcahue' %}"
+                    style="left: 31.2%; top: 51.3%;" title="Dalcahue"></a>
 
-            <div class="mapa">       <!-- Se establece el identificador 'mapa' para poder editarlo desde el css -->
+                    <a class="punto-comuna" href="{% url 'comuna' 'castro' %}"
+                    style="left: 50.8%; top: 61%;" title="Castro"></a>
 
-                <!-- Se establecen la imagen del mapa con el identificador 'imag-mapa'  -->
-                <img
-                    src="{% static 'css/logo_para_aquaconciencia.png' %}"     
-                    alt="Mapa de Chiloé"
-                    class="imagen-mapa"
-                >
+                    <a class="punto-comuna" href="{% url 'comuna' 'chonchi' %}"
+                    style="left: 37.3%; top: 75.4%;" title="Chonchi"></a>
 
+                    <a class="punto-comuna" href="{% url 'comuna' 'quellon' %}"
+                    style="left: 52.1%; top: 91%;" title="Quellón"></a>
+ 
+                </div>
+ 
             </div>
-
+ 
             <div class="accesos">
-
-                <a href="{% url 'noticias' %}" class="acceso">         <!-- Se establece que rediriga al ususario a 'Noticias' -->
-                    Noticias
-                </a>
-
-                <a href="{% url 'foro' %}" class="acceso">      <!-- Se establece que rediriga al ususario a 'foro' -->
-                    Foro
-                </a>
-
-                <!-- Se establece como boton a 'eduacacion ambiental' y a 'Actividades' pero no redirigiendo al usuario -->
-                <a href="#" class="acceso">
-                    Educación Ambiental
-                </a>
-
-                <a href="#" class="acceso">
-                    Actividades
-                </a>
-
+                <a href="{% url 'noticias' %}" class="acceso">Noticias</a>
+                <a href="#" class="acceso">Actividades</a>
             </div>
-
+ 
         </div>
-
-        <div class="sidebar">        <!-- Se establece el identificador 'sidebar' para poder editarlo desde el css -->
-
-            <div class="progreso">       <!-- Se establece el identificador 'progreso' para poder editarlo desde el css -->
+ 
+        <div class="sidebar">
+ 
+            <div class="progreso">
                 <h3>0%</h3>
             </div>
-
-            <div class="info">       <!-- Se establece el identificador 'info' para poder editarlo desde el css -->
-
+ 
+            <div class="info">
                 <div>
-
-                    <!-- Se establece texto para mostrar en la web -->
                     <h3>Información</h3>
-
                     <p>
                         Selecciona una comuna del mapa para visualizar
                         información relacionada con la contaminación
                         ambiental y la conservación de los ecosistemas
                         del Archipiélago de Chiloé.
                     </p>
-
                 </div>
-
             </div>
-
+ 
         </div>
-
+ 
     </div>
-
+ 
 </div>
-
+ 
 </body>
 </html>
+ 
