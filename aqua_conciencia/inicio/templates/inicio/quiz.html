@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Aqua Conciencia</title>
+
+    <link rel="stylesheet" href="{% static 'css/quiz.css' %}">
+</head>
+<body>
+
+<div class="contenedor">
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+
+        <div class="logo">
+            <img class="logo-icono" src="{% static 'css/logo2.png' %}" alt="Logo">
+            <img class="logo-texto" src="{% static 'css/image 1.png' %}" alt="Aqua Conciencia">
+        </div>
+
+        <nav class="menu">
+            <a href="{% url 'panel' %}">Mapa</a>
+            <a href="{% url 'quiz_inicio' %}">Quiz</a>
+            <a href="{% url 'noticias' %}">Curiosidades</a>
+            <a href="#">Ayuda</a>
+        </nav>
+
+        <div class="iconos">
+            <a href="{% url 'panel' %}">
+                <img class="icono" src="{% static 'css/logo.casa.png' %}" alt="Inicio">
+            </a>
+
+            <a href="{% url 'perfil' %}">
+                <img class="icono" src="{% static 'css/logo.usuario.png' %}" alt="Usuario">
+            </a>
+        </div>
+
+    </header>
+
+    <!-- PANEL QUIZ -->
+    <section class="panel">
+
+        <div class="quices">
+
+    <a href="{% url 'quiz1' 1 %}" class="quiz-link">Quiz 1</a>
+    <a href="{% url 'quiz2' 1 %}" class="quiz-link">Quiz 2</a>
+    <a href="{% url 'quiz3' 1 %}" class="quiz-link">Quiz 3</a>
+    <a href="{% url 'quiz4' 1 %}" class="quiz-link">Quiz 4</a>
+
+    <a href="{% url 'quiz5' 1 %}" class="quiz-link">Quiz 5</a>
+    <a href="{% url 'quiz6' 1 %}" class="quiz-link">Quiz 6</a>
+    <a href="{% url 'quiz7' 1 %}" class="quiz-link">Quiz 7</a>
+    <a href="{% url 'quiz8' 1 %}" class="quiz-link">Quiz 8</a>
+
+    <a href="{% url 'quiz9' 1 %}" class="quiz-link">Quiz 9</a>
+    <a href="{% url 'quiz10' 1 %}" class="quiz-link">Quiz 10</a>
+    <a href="{% url 'quiz11' 1 %}" class="quiz-link">Quiz 11</a>
+    <a href="{% url 'quiz12' 1 %}" class="quiz-link">Quiz 12</a>
+
+</div>
+        <!-- PROGRESO -->
+        <div class="progreso">
+
+            <div class="circulo"></div>
+
+            <div class="texto-progreso">
+                <h3>Progreso: {{ progreso|default:0 }}%</h3>
+                <h3>Completados: {{ completados|default:0 }}/12</h3>
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+</body>
+</html>

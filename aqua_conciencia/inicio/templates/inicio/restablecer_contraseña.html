@@ -1,0 +1,51 @@
+{% load static %}       <!-- codigo para poder usar imagenes -->
+
+<!DOCTYPE html>     <!-- Se avisa al navegador que el codigo esta hecho con HTML -->
+<html lang="es">        <!-- Se define el 'idioma' de la web -->
+<head>
+    <meta charset="UTF-8">       <!-- Se introduce que la pagina sea capaz de soportar distintos tipos de caracteres (ñ,á,ü) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">       <!-- Se introduce codigo para que la pagina sea capas de adaptarse a todo tipos de dispositivos (laptop, celulares, tablet, etc.) -->
+    <title>Restablecer Contraseña - Aqua Conciencia</title>
+
+    <link rel="stylesheet" href="{% static 'css/creacion_cuenta.css' %}">        <!-- Se establece el link de este archivo, al archivo de css llamdo 'creacion_cuenta.css' para poder editar este archivo desde css -->
+</head>
+
+<body>
+
+    <div class="registro-card">
+
+        <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">      <!-- Se establece la imagen del logo en la pagina y con el identificador 'logo' para poder editar su posicionamiento-->
+
+        <img src="{% static 'css/image 1.png' %}" alt="Aqua Conciencia" style="display:block; margin:0 auto 20px; width:220px;">
+
+        <h2>Restablecer Contraseña</h2>     <!-- Se introduce texto 'Restablecer contraseña' en grande y en negrita -->
+
+        <p style="text-align:center; margin-bottom:25px;">
+            Ingresa tu correo para recibir el enlace de restablecimiento.
+        </p>
+
+        <!-- 🔥 IMPORTANTE: ESTE FORM ES EL CORRECTO PARA DJANGO -->
+        <form method="POST" action="{% url 'restablecer' %}">
+            {% csrf_token %}
+
+            <label>Correo Electrónico</label>
+
+            <!-- Usamos "correo" porque tu vista espera ese campo -->
+            <input          
+                type="email"
+                name="correo"                              
+                placeholder="aquaconciencia@example.com"
+                required
+            >
+
+            <!-- Boton de 'continuar' -->
+            <button type="submit" class="btn-crear">
+                Continuar
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

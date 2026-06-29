@@ -1,0 +1,235 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias Ambientales</title>
+
+   <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    min-height:100vh;
+
+    background: linear-gradient(
+        135deg,
+        #7dd3d8,
+        #4ba4a8,
+        #2f6f72
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:30px;
+}
+
+/* CONTENEDOR GENERAL */
+.principal{
+    display:flex;
+    align-items:flex-start;
+    gap:25px;
+}
+
+/* LOGOS A LA IZQUIERDA */
+.logos{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:15px;
+    margin-top:20px;
+}
+
+.logo-mano{
+    width:95px;
+    height:auto;
+}
+
+.logo-texto{
+    width:140px;
+    height:auto;
+}
+
+/* RECTÁNGULO */
+.contenedor{
+    width:900px;
+    max-width:100%;
+
+    background:rgba(255,255,255,0.35);
+    backdrop-filter:blur(10px);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.encabezado{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.titulo{
+    color:#1e4b4d;
+    font-size:50px;
+    margin:0;
+}
+
+.noticia{
+    background:white;
+    border-radius:15px;
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+    padding:15px;
+    margin-bottom:20px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.noticia img{
+    width:180px;
+    height:130px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.contenido{
+    flex:1;
+}
+
+.contenido h3{
+    color:#222;
+    margin-bottom:10px;
+    font-size:24px;
+}
+
+.contenido p{
+    color:#444;
+    line-height:1.5;
+}
+
+.fecha{
+    font-size:12px;
+    color:#888;
+    text-align:center;
+    margin-top:6px;
+    font-style:italic;
+}
+
+.link{
+    display:block;
+    margin-top:10px;
+    font-size:13px;
+    color:#1a5fb4;
+    word-break:break-word;
+}
+
+.volver{
+    display:block;
+    width:200px;
+    margin:20px auto 0;
+    text-align:center;
+    background:#6d8b8d;
+    color:white;
+    text-decoration:none;
+    padding:12px;
+    border-radius:10px;
+}
+
+.volver:hover{
+    background:#597274;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="principal">
+
+    <!-- LOGOS FUERA DEL RECTÁNGULO -->
+    <div class="logos">
+        <img src="{% static 'css/logo2.png' %}" alt="Logo Mano" class="logo-mano">
+        <img src="{% static 'css/image 1.png' %}" alt="Logo Aqua Conciencia" class="logo-texto">
+    </div>
+
+    <div class="contenedor">
+
+        <div class="encabezado">
+            <h1 class="titulo">Noticias Ambientales</h1>
+        </div>
+
+        <div class="noticia">
+
+            <div>
+                <img src="{% static 'css/noticias1.png' %}" alt="Turbera">
+                <p class="fecha">Publicado: 26 de agosto de 2020</p>
+            </div>
+
+            <div class="contenido">
+                <h3>Conservación de Humedales 💧</h3>
+
+                <p>
+                    Los humedales y turberas de Chiloé son ecosistemas
+                    fundamentales para la conservación de la biodiversidad
+                    y la protección de los recursos hídricos.
+                </p>
+
+                <a class="link"
+                   href="https://diario.uach.cl/chiloe-esta-perdiendo-sus-mas-importantes-reservorios-de-agua-dulce/"
+                   target="_blank">
+                   https://diario.uach.cl/chiloe-esta-perdiendo-sus-mas-importantes-reservorios-de-agua-dulce/
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="noticia">
+
+            <div>
+                <img src="{% static 'css/noticias2.png' %}" alt="Universidad">
+                <p class="fecha">Publicado: 2024</p>
+            </div>
+
+            <div class="contenido">
+
+                <h3>Investigación Ambiental 📚</h3>
+
+                <p>
+                    Universidades y organizaciones desarrollan estudios
+                    relacionados con la contaminación hídrica y sus efectos
+                    sobre los ecosistemas de la Región de Los Lagos.
+                </p>
+
+                <a class="link"
+                   href="https://repositorio.uchile.cl/bitstream/handle/2250/208972/Pesca-y-acuicultura-conflicto.pdf"
+                   target="_blank">
+                   https://repositorio.uchile.cl/bitstream/handle/2250/208972/Pesca-y-acuicultura-conflicto.pdf
+                </a>
+
+            </div>
+
+        </div>
+
+        <a href="{% url 'panel' %}" class="volver">
+            Volver al Panel
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

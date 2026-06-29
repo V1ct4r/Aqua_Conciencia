@@ -14,4 +14,5 @@ urlpatterns = [
     path('cerrar-sesion/', views.cerrar_sesion, name='cerrar_sesion'), 
     path('borrar-cuenta/', views.borrar_cuenta, name='borrar_cuenta'),
     path('comuna/<str:nombre>/', views.comuna, name='comuna'),
+    path('ayuda/', views.ayuda, name='ayuda'),
 ]

@@ -90,3 +90,6 @@ def borrar_cuenta(request):
 
 def comuna(request, nombre):
     return render(request, f'inicio/comuna_{nombre}_mapa.html')
+
+def ayuda(request):
+    return render(request, 'inicio/ayuda.html')

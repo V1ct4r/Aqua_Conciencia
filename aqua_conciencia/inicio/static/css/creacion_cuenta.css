@@ -1,0 +1,99 @@
+body{
+    background:#33d9ff !important;
+}
+
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+.campo-password {
+    position: relative;
+}
+
+.campo-password input {
+    width: 100%;
+    padding-right: 35px; 
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+}
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#2fd8ff;
+}
+
+.registro-card{
+width:760px;
+background:white;
+border-radius:10px;
+padding:60px;
+position:relative;
+box-shadow:0 0 15px rgba(0,0,0,.2);
+border: 2px solid black;
+}
+
+.logo{
+width:130px;
+position:absolute;
+top:-40px;
+left:30px;
+}
+
+.titulo{
+text-align:center;
+margin-bottom:40px;
+line-height:1;
+}
+
+.azul{
+color:#0b5fa5;
+}
+
+.verde{
+color:#3cab3c;
+}
+
+form{
+display:flex;
+flex-direction:column;
+}
+
+label{
+margin-top:20px;
+margin-bottom:8px;
+font-weight:bold;
+}
+
+input{
+padding:12px;
+border:2px solid #1aa7d8;
+border-radius:5px;
+font-size:16px;
+}
+
+.btn-crear{
+margin:40px auto 0;
+width:180px;
+height:50px;
+border:none;
+background:#39d739;
+color:white;
+font-size:18px;
+border-radius:5px;
+cursor:pointer;
+}
