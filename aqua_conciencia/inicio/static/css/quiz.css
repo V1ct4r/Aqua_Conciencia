@@ -6,13 +6,23 @@
 }
 
 body{
-    background:linear-gradient(to bottom right,#35bfe6,#4dcceb,#66d8f2);
+    
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-}
 
+    font-family:Georgia, serif;
+
+    background: radial-gradient(
+        circle,
+        #7fd4d6 0%,
+        #5aaeb0 50%,
+        #356f72 100%
+    );
+
+    padding:40px;
+}
 .contenedor {
     width:95%;
     max-width:1300px;

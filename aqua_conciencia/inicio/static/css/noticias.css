@@ -1,0 +1,181 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-family:Georgia, serif;
+
+    background: radial-gradient(
+        circle,
+        #7fd4d6 0%,
+        #5aaeb0 50%,
+        #356f72 100%
+    );
+
+    padding:40px;
+}
+
+.contenedor{
+    width:900px;
+    max-width:100%;
+
+    background:rgba(255,255,255,0.35);
+    backdrop-filter:blur(10px);
+
+    border:5px solid black;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+h1{
+    text-align:center;
+    font-size:55px;
+    color:#264c4d;
+    margin-bottom:25px;
+}
+
+.noticia{
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+    background:rgba(255,255,255,0.65);
+
+    border-radius:15px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+
+    transition:0.3s;
+}
+
+.noticia:hover{
+    transform:translateY(-3px);
+}
+
+.noticia img{
+    width:140px;
+    height:140px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+.contenido{
+    flex:1;
+}
+
+.contenido h3{
+    font-size:22px;
+    color:#222;
+    margin-bottom:10px;
+}
+
+.contenido p{
+    font-size:16px;
+    color:#333;
+    line-height:1.5;
+}
+
+.volver{
+    display:block;
+
+    width:180px;
+
+    margin:25px auto 0;
+
+    text-align:center;
+
+    background:#6b8687;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 20px;
+
+    border-radius:10px;
+
+    transition:0.3s;
+}
+
+.volver:hover{
+    background:#587071;
+    transform:scale(1.05);
+}
+.fecha{
+    display:block;
+    text-align:center;
+    margin-top:6px;
+    font-size:12px;
+    color:#8c8c8c;
+    font-style:italic;
+}
+.link{
+    display:block;
+    margin-top:10px;
+    font-size:13px;
+    color:#2b6cb0;
+    word-break:break-word;
+    text-decoration:none;
+}
+
+.link:hover{
+    text-decoration:underline;
+}
+/* CONTENEDOR GENERAL */
+.principal{
+    display:flex;
+    align-items:flex-start;
+    gap:25px;
+}
+
+/* LOGOS FUERA DEL RECTÁNGULO */
+.logos{
+    display:flex;          
+    flex-direction:row;    
+    align-items:center;    
+    gap:12px;              
+    margin-top:25px;
+}
+
+
+
+.logo-mano{
+    width:80px;
+    height:auto;
+}
+
+.logo-texto{
+    width:150px;
+    height:auto;
+}
+
+/* TÍTULO */
+.encabezado{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.titulo{
+    font-size:55px;
+    color:#264c4d;
+    margin:0;
+}

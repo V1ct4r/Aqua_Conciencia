@@ -17,7 +17,28 @@ def inicio(request):
     return render(request, 'inicio/login.html')
 
 def restablecer(request):
+    if request.method == 'POST':
+        correo = request.POST.get('correo')
+        # Aquí podrías validar si el correo existe en la BD:
+        # if User.objects.filter(email=correo).exists():
+        #     return redirect('nueva_contraseña')
+
+        # Por ahora, siempre redirige:
+        return redirect('nueva_contraseña')
     return render(request, 'inicio/restablecer_contraseña.html')
+
+
+def nueva_contraseña(request):
+    if request.method == 'POST':
+        nueva = request.POST.get('password')
+        confirmar = request.POST.get('confirmar')
+        # Aquí iría la lógica para actualizar la contraseña del usuario
+        # Ejemplo:
+        # user = User.objects.get(email=correo)
+        # user.set_password(nueva)
+        # user.save()
+        return redirect('inicio')
+    return render(request, 'inicio/nueva_contraseña.html')
 
 def crear_cuenta(request):
     if request.method == 'POST':
@@ -29,7 +50,13 @@ def crear_cuenta(request):
     return render(request, 'inicio/creacion_cuenta.html')
 
 def panel(request):
-    return render(request, 'inicio/panel.html')
+    completados = len(request.session.get("quizzes_completados", []))
+    progreso = int((completados / 12) * 100)
+    print(request.session.get("quizzes_completados", []))
+    return render(request, 'inicio/panel.html', {
+        'completados': completados,
+        'progreso': progreso,
+    })
 
 def noticias(request):
     return render(request, 'inicio/noticias.html')
@@ -44,8 +71,14 @@ def configuracion(request):
     return render(request, 'inicio/configuracion.html')
 
 def quiz(request):
-    return render(request, 'inicio/quiz.html')
+    completados = len(request.session.get("quizzes_completados", []))
 
+    progreso = int((completados / 12) * 100)
+
+    return render(request, "inicio/quiz.html", {
+        "completados": completados,
+        "progreso": progreso,
+    })
 # =========================
 # FUNCIÓN AUXILIAR PARA QUIZ
 # =========================
@@ -80,8 +113,15 @@ def manejar_quiz(request, preguntas, numero, resultado_url, template):
         "pregunta": pregunta_actual,
         "numero": numero,
         "total": total
+        
     })
+def completar_quiz(request, numero):
+    completados = request.session.get("quizzes_completados", [])
 
+    if numero not in completados:
+        completados.append(numero)
+
+    request.session["quizzes_completados"] = completados
 # =========================
 # QUIZ 1
 # =========================
@@ -183,20 +223,21 @@ def quiz1(request, numero):
         "explicacion": "El color azul representa ríos, lagos y océanos."
     },
     {
-        "pregunta": "¿Cuál es el objetivo principal de AquaConciencia?",
-        "opciones": [
-            "Enseñar a cuidar el agua y el medioambiente",
-            "Vender productos",
-            "Hablar solo de animales",
-            "Enseñar matemáticas"
-        ],
-        "correcta": "Enseñar a cuidar el agua y el medioambiente",
-        "explicacion": "AquaConciencia busca educar sobre la importancia del agua y su conservación."
-    }
+    "pregunta": "¿Qué proceso natural ayuda a mantener limpios los ríos?",
+    "opciones": [
+        "La fotosíntesis de las plantas acuáticas",
+        "El movimiento del agua que arrastra sedimentos",
+        "La evaporación constante",
+        "La acumulación de basura en las orillas"
+    ],
+    "correcta": "La fotosíntesis de las plantas acuáticas",
+    "explicacion": "Las plantas acuáticas realizan fotosíntesis y ayudan a oxigenar el agua, manteniéndola más limpia."
+}
 ]
     return manejar_quiz(request, preguntas, numero, "resultado_quiz1", "inicio/quiz1.html")
 
 def resultado_quiz1(request):
+    completar_quiz(request, 1)
     correctas = request.session.get("correctas", 0)
     errores = request.session.get("errores", [])
     return render(request, "inicio/resultado_quiz.html", {
@@ -294,16 +335,18 @@ def quiz2(request, numero):
         "explicacion": "Usar el agua de forma responsable ayuda a conservar este recurso."
     },
     {
-        "pregunta": "¿Cuál es uno de los objetivos de AquaConciencia?",
-        "opciones": [
-            "Enseñar a cuidar el agua",
-            "Vender productos",
-            "Enseñar solo historia",
-            "Construir carreteras"
-        ],
-        "correcta": "Enseñar a cuidar el agua",
-        "explicacion": "La plataforma busca crear conciencia sobre la importancia del agua."
-    },
+    "pregunta": "¿Qué impacto tiene la deforestación en los ríos de Chiloé?",
+    "opciones": [
+        "Provoca erosión y contaminación del agua",
+        "Aumenta la cantidad de peces",
+        "Genera más lluvia",
+        "Mejora la calidad del aire"
+    ],
+    "correcta": "Provoca erosión y contaminación del agua",
+    "explicacion": "La deforestación elimina la cobertura vegetal, lo que provoca erosión del suelo y contaminación en los ríos."
+}
+
+    ,
     {
         "pregunta": "¿Qué beneficio tiene cuidar el agua hoy?",
         "opciones": [
@@ -319,6 +362,7 @@ def quiz2(request, numero):
     return manejar_quiz(request, preguntas, numero, "resultado_quiz2", "inicio/quiz1.html")
 
 def resultado_quiz2(request):
+    completar_quiz(request, 2)
     correctas = request.session.get("correctas", 0)
     errores = request.session.get("errores", [])
     return render(request, "inicio/resultado_quiz.html", {
@@ -451,6 +495,7 @@ def quiz3(request, numero):
     return manejar_quiz(request, preguntas, numero, "resultado_quiz3", "inicio/quiz1.html")
 
 def resultado_quiz3(request):
+    completar_quiz(request, 3)
     correctas = request.session.get("correctas", 0)
     errores = request.session.get("errores", [])
     return render(request, "inicio/resultado_quiz.html", {
@@ -569,20 +614,22 @@ def quiz4(request, numero):
         "explicacion": "La biodiversidad incluye todos los seres vivos y los ecosistemas donde habitan."
     },
     {
-        "pregunta": "¿Cuál es el principal objetivo de AquaConciencia?",
-        "opciones": [
-            "Educar sobre el cuidado del agua y el medioambiente",
-            "Vender productos",
-            "Construir carreteras",
-            "Extraer recursos naturales"
-        ],
-        "correcta": "Educar sobre el cuidado del agua y el medioambiente",
-        "explicacion": "AquaConciencia busca enseñar de forma interactiva la importancia de proteger el agua."
-    }
+    "pregunta": "¿Qué ocurre si se drena un humedal para construir casas?",
+    "opciones": [
+        "Se pierde hábitat y aumenta el riesgo de inundaciones",
+        "El agua se vuelve más limpia",
+        "No pasa nada",
+        "Se generan más peces"
+    ],
+    "correcta": "Se pierde hábitat y aumenta el riesgo de inundaciones",
+    "explicacion": "Los humedales actúan como barreras naturales contra inundaciones y son hogar de muchas especies; al drenarlos se pierde esa protección."
+}
+
 ]
     return manejar_quiz(request, preguntas, numero, "resultado_quiz4", "inicio/quiz1.html")
 
 def resultado_quiz4(request):
+    completar_quiz(request, 4)
     correctas = request.session.get("correctas", 0)
     errores = request.session.get("errores", [])
     return render(request, "inicio/resultado_quiz.html", {
@@ -649,22 +696,36 @@ def quiz5(request, numero):
             "correcta": "Disminuye visitantes",
             "explicacion": "El turismo se ve afectado porque los visitantes buscan ambientes limpios y saludables."
         },
-        {
-            "pregunta": "¿Qué modelo educativo usa AquaConciencia para abordar estos problemas?",
-            "opciones": ["CDIO", "ISO", "ABC", "STEM"],
-            "correcta": "CDIO",
-            "explicacion": "El proyecto se basa en el modelo CDIO: Concebir, Diseñar, Implementar y Operar."
-        },
-        {
-            "pregunta": "¿Cuál es el objetivo social de AquaConciencia?",
-            "opciones": ["Concientizar a estudiantes", "Explotar turberas", "Vender salmones", "Generar energía"],
-            "correcta": "Concientizar a estudiantes",
-            "explicacion": "El objetivo es educar y concientizar a los estudiantes sobre la importancia del agua."
-        }
+       {
+    "pregunta": "¿Qué ocurre si se construyen carreteras sobre humedales?",
+    "opciones": [
+        "Se destruye el hábitat y se altera el ciclo del agua",
+        "El agua se vuelve más limpia",
+        "No pasa nada",
+        "Se generan más peces"
+    ],
+    "correcta": "Se destruye el hábitat y se altera el ciclo del agua",
+    "explicacion": "Las carreteras sobre humedales interrumpen el flujo natural del agua y afectan a las especies que dependen de ellos."
+},
+{
+    "pregunta": "¿Qué acción comunitaria ayuda a conservar los ríos?",
+    "opciones": [
+        "Organizar limpiezas y campañas educativas",
+        "Botar basura en las orillas",
+        "Usar químicos sin control",
+        "Ignorar los problemas ambientales"
+    ],
+    "correcta": "Organizar limpiezas y campañas educativas",
+    "explicacion": "Las limpiezas comunitarias y la educación ambiental fortalecen la conciencia y protegen los ríos."
+}
+
+        ,
+     
     ]
     return manejar_quiz(request, preguntas, numero, "resultado_quiz5", "inicio/quiz1.html")
 
 def resultado_quiz5(request):
+    completar_quiz(request, 5)
     correctas = request.session.get("correctas", 0)
     errores = request.session.get("errores", [])
     return render(request, "inicio/resultado_quiz.html", {
@@ -719,24 +780,40 @@ def quiz6(request, numero):
             "correcta": "No botar basura",
             "explicacion": "Evitar botar basura en ríos protege la biodiversidad acuática."
         },
-        {
-            "pregunta": "¿Qué estrategia propone AquaConciencia para enseñar sobre el agua?",
-            "opciones": ["Mapa interactivo", "Películas", "Canciones", "Deportes"],
-            "correcta": "Mapa interactivo",
-            "explicacion": "La plataforma usa un mapa interactivo para mostrar zonas afectadas."
-        },
-        {
-            "pregunta": "¿Qué modelo educativo guía AquaConciencia?",
-            "opciones": ["CDIO", "ISO", "ABC", "STEM"],
-            "correcta": "CDIO",
-            "explicacion": "El proyecto se basa en el modelo CDIO: Concebir, Diseñar, Implementar y Operar."
-        },
-        {
-            "pregunta": "¿Qué beneficio aporta AquaConciencia a los estudiantes?",
-            "opciones": ["Conciencia ambiental temprana", "Más contaminación", "Menos biodiversidad", "Explotación de recursos"],
-            "correcta": "Conciencia ambiental temprana",
-            "explicacion": "Busca que los estudiantes comprendan la importancia de cuidar el agua desde pequeños."
-        },
+      {
+    "pregunta": "¿Qué ocurre si se arrojan plásticos al mar?",
+    "opciones": [
+        "Se dañan los ecosistemas marinos",
+        "El agua se vuelve más pura",
+        "No pasa nada",
+        "Se generan más peces"
+    ],
+    "correcta": "Se dañan los ecosistemas marinos",
+    "explicacion": "Los plásticos afectan la vida marina, contaminan el agua y ponen en riesgo a muchas especies."
+}
+,
+      {
+    "pregunta": "¿Qué beneficio tiene que los jóvenes participen en proyectos ambientales?",
+    "opciones": [
+        "Aprenden a proteger la naturaleza",
+        "Generan más contaminación",
+        "Reducen la biodiversidad",
+        "Explotan recursos sin control"
+    ],
+    "correcta": "Aprenden a proteger la naturaleza",
+    "explicacion": "La participación juvenil en proyectos ambientales fomenta la conciencia y el compromiso con el cuidado del entorno."
+},
+       {
+    "pregunta": "¿Qué ocurre si se vierten pesticidas en un río?",
+    "opciones": [
+        "Se contaminan el agua y mueren especies",
+        "El agua se vuelve más clara",
+        "No pasa nada",
+        "Se generan más peces"
+    ],
+    "correcta": "Se contaminan el agua y mueren especies",
+    "explicacion": "Los pesticidas afectan la calidad del agua y dañan a las plantas y animales acuáticos."
+},
         {
             "pregunta": "¿Qué acción comunitaria ayuda a proteger los ecosistemas de Chiloé?",
             "opciones": ["Participar en limpiezas de playas y ríos", "Botar basura", "Explotar turberas", "Usar químicos sin control"],
@@ -747,6 +824,7 @@ def quiz6(request, numero):
     return manejar_quiz(request, preguntas, numero, "resultado_quiz6", "inicio/quiz1.html")
 
 def resultado_quiz6(request):
+    completar_quiz(request, 6)
     correctas = request.session.get("correctas", 0)
     errores = request.session.get("errores", [])
     return render(request, "inicio/resultado_quiz.html", {
@@ -815,15 +893,22 @@ def quiz7(request, numero):
             "explicacion": "El chorito es una especie emblemática que depende de aguas limpias para sobrevivir."
         },
         {
-            "pregunta": "¿Cuál es el objetivo ecológico de AquaConciencia?",
-            "opciones": ["Concientizar sobre ecosistemas", "Explotar turberas", "Vender salmones", "Generar energía"],
-            "correcta": "Concientizar sobre ecosistemas",
-            "explicacion": "El objetivo es educar sobre la importancia de los ecosistemas y el agua en Chiloé."
-        }
+    "pregunta": "¿Qué ocurre si se vierten metales pesados en los ríos?",
+    "opciones": [
+        "Se contaminan las aguas y mueren especies",
+        "El agua se vuelve más clara",
+        "No pasa nada",
+        "Se generan más peces"
+    ],
+    "correcta": "Se contaminan las aguas y mueren especies",
+    "explicacion": "Los metales pesados son altamente tóxicos y afectan la salud de los ecosistemas acuáticos y de las comunidades."
+}
+
     ]
     return manejar_quiz(request, preguntas, numero, "resultado_quiz7", "inicio/quiz1.html")
 
 def resultado_quiz7(request):
+    completar_quiz(request, 7)
     correctas = request.session.get("correctas", 0)
     errores = request.session.get("errores", [])
     return render(request, "inicio/resultado_quiz.html", {
@@ -861,46 +946,67 @@ def quiz8(request, numero):
             "correcta": "Cerrar la llave al cepillarse",
             "explicacion": "Cerrar la llave mientras te cepillas los dientes ahorra litros de agua diariamente."
         },
+       {
+    "pregunta": "¿Qué ocurre si se arroja aceite usado al lavaplatos?",
+    "opciones": [
+        "Se contamina el agua y las cañerías",
+        "El agua se vuelve más limpia",
+        "No pasa nada",
+        "Se generan más peces"
+    ],
+    "correcta": "Se contamina el agua y las cañerías",
+    "explicacion": "El aceite usado bloquea cañerías y contamina el agua, afectando a los ecosistemas."
+},
         {
-            "pregunta": "¿Qué estrategia educativa usa AquaConciencia?",
-            "opciones": ["Mapa interactivo", "Películas", "Canciones", "Deportes"],
-            "correcta": "Mapa interactivo",
-            "explicacion": "La plataforma usa un mapa interactivo para mostrar zonas afectadas."
-        },
-        {
-            "pregunta": "¿Qué modelo educativo guía AquaConciencia?",
-            "opciones": ["CDIO", "ISO", "ABC", "STEM"],
-            "correcta": "CDIO",
-            "explicacion": "El proyecto se basa en el modelo CDIO: Concebir, Diseñar, Implementar y Operar."
-        },
+    "pregunta": "¿Qué herramienta educativa ayuda a que los niños comprendan el cuidado del agua?",
+    "opciones": [
+        "Talleres prácticos en la escuela",
+        "Ignorar los problemas ambientales",
+        "Explotar recursos sin control",
+        "Usar más plásticos"
+    ],
+    "correcta": "Talleres prácticos en la escuela",
+    "explicacion": "Los talleres permiten que los estudiantes aprendan de forma activa y desarrollen conciencia ambiental."
+},
         {
             "pregunta": "¿Qué acción comunitaria ayuda a proteger las turberas?",
             "opciones": ["Evitar su explotación", "Quemarlas", "Usarlas como vertedero", "Drenarlas"],
             "correcta": "Evitar su explotación",
             "explicacion": "Las turberas deben conservarse porque almacenan agua y carbono."
         },
-        {
-            "pregunta": "¿Qué beneficio aporta AquaConciencia a los estudiantes?",
-            "opciones": ["Conciencia ambiental temprana", "Más contaminación", "Menos biodiversidad", "Explotación de recursos"],
-            "correcta": "Conciencia ambiental temprana",
-            "explicacion": "Busca que los estudiantes comprendan la importancia de cuidar el agua desde pequeños."
-        },
+       {
+    "pregunta": "¿Qué beneficio tiene que las comunidades participen en proyectos ambientales?",
+    "opciones": [
+        "Fortalecer la conciencia y proteger recursos",
+        "Generar más contaminación",
+        "Reducir la biodiversidad",
+        "Explotar recursos sin control"
+    ],
+    "correcta": "Fortalecer la conciencia y proteger recursos",
+    "explicacion": "La participación comunitaria fomenta el compromiso y ayuda a conservar el agua y los ecosistemas."
+},
         {
             "pregunta": "¿Qué acción comunitaria fortalece la participación ciudadana?",
             "opciones": ["Charlas y talleres ambientales", "Botar basura", "Explotar turberas", "Usar químicos sin control"],
             "correcta": "Charlas y talleres ambientales",
             "explicacion": "Las charlas y talleres fomentan la participación ciudadana en temas ambientales."
         },
-        {
-            "pregunta": "¿Cuál es el objetivo social de AquaConciencia?",
-            "opciones": ["Concientizar a estudiantes", "Explotar turberas", "Vender salmones", "Generar energía"],
-            "correcta": "Concientizar a estudiantes",
-            "explicacion": "El objetivo es educar y concientizar a los estudiantes sobre la importancia del agua."
-        }
+       {
+    "pregunta": "¿Qué ocurre si no cuidamos el agua?",
+    "opciones": [
+        "Se afecta la salud y el bienestar",
+        "El agua se vuelve más abundante",
+        "No pasa nada",
+        "Se generan más peces"
+    ],
+    "correcta": "Se afecta la salud y el bienestar",
+    "explicacion": "La falta de cuidado del agua impacta directamente en la vida de las personas y los ecosistemas."
+}
     ]
     return manejar_quiz(request, preguntas, numero, "resultado_quiz8", "inicio/quiz1.html")
 
 def resultado_quiz8(request):
+    completar_quiz(request, 8)
     correctas = request.session.get("correctas", 0)
     errores = request.session.get("errores", [])
     return render(request, "inicio/resultado_quiz.html", {
@@ -963,11 +1069,17 @@ def quiz9(request, numero):
             "explicacion": "La agricultura intensiva genera impactos similares a la salmonicultura: contaminación y pérdida de biodiversidad."
         },
         {
-            "pregunta": "¿Qué acción internacional busca proteger el agua?",
-            "opciones": ["Convenios ambientales", "Explotación indiscriminada", "Uso excesivo de plásticos", "Deforestación"],
-            "correcta": "Convenios ambientales",
-            "explicacion": "Los convenios internacionales buscan proteger el agua y los ecosistemas."
-        },
+    "pregunta": "¿Qué ocurre cuando los ríos pierden su calidad de agua?",
+    "opciones": [
+        "Se afecta la salud de las comunidades",
+        "El agua se vuelve más abundante",
+        "No pasa nada",
+        "Se generan más peces"
+    ],
+    "correcta": "Se afecta la salud de las comunidades",
+    "explicacion": "La pérdida de calidad del agua impacta directamente en la salud y bienestar de las personas y ecosistemas."
+}
+,
         {
             "pregunta": "¿Cuál es el objetivo de comparar problemas globales con los de Chiloé?",
             "opciones": ["Concientizar sobre la conexión local-global", "Explotar más recursos", "Ignorar la contaminación", "Generar energía fósil"],
@@ -978,6 +1090,7 @@ def quiz9(request, numero):
     return manejar_quiz(request, preguntas, numero, "resultado_quiz9", "inicio/quiz1.html")
 
 def resultado_quiz9(request):
+    completar_quiz(request, 9)
     correctas = request.session.get("correctas", 0)
     errores = request.session.get("errores", [])
     return render(request, "inicio/resultado_quiz.html", {
@@ -1055,6 +1168,7 @@ def quiz10(request, numero):
     return manejar_quiz(request, preguntas, numero, "resultado_quiz10", "inicio/quiz1.html")
 
 def resultado_quiz10(request):
+    completar_quiz(request, 10)
     correctas = request.session.get("correctas", 0)
     errores = request.session.get("errores", [])
     return render(request, "inicio/resultado_quiz.html", {
@@ -1132,6 +1246,7 @@ def quiz11(request, numero):
     return manejar_quiz(request, preguntas, numero, "resultado_quiz11", "inicio/quiz1.html")
 
 def resultado_quiz11(request):
+    completar_quiz(request, 11)
     correctas = request.session.get("correctas", 0)
     errores = request.session.get("errores", [])
     return render(request, "inicio/resultado_quiz.html", {
@@ -1163,12 +1278,18 @@ def quiz12(request, numero):
             "correcta": "No botar basura",
             "explicacion": "Si no botamos basura, los ríos se mantienen limpios y saludables."
         },
-        {
-            "pregunta": "¿Qué podemos hacer para cuidar la energía en casa?",
-            "opciones": ["Apagar la luz cuando no se usa", "Dejar las luces encendidas", "Usar más aparatos eléctricos", "Abrir el refrigerador todo el día"],
-            "correcta": "Apagar la luz cuando no se usa",
-            "explicacion": "Apagar las luces ahorra energía y ayuda al medioambiente."
-        },
+       {
+    "pregunta": "¿Qué ocurre si dejamos una fuga de agua sin reparar?",
+    "opciones": [
+        "Se desperdicia agua potable",
+        "El agua se vuelve más limpia",
+        "No pasa nada",
+        "Se generan más peces"
+    ],
+    "correcta": "Se desperdicia agua potable",
+    "explicacion": "Las fugas de agua provocan un gran desperdicio de agua potable y aumentan el consumo innecesario."
+}
+,
         {
             "pregunta": "¿Qué acción ayuda a reducir el uso de plásticos?",
             "opciones": ["Usar bolsas reutilizables", "Botar plásticos al mar", "Usar más desechables", "Quemar plásticos"],
@@ -1209,6 +1330,7 @@ def quiz12(request, numero):
     return manejar_quiz(request, preguntas, numero, "resultado_quiz12", "inicio/quiz1.html")
 
 def resultado_quiz12(request):
+    completar_quiz(request, 12)
     correctas = request.session.get("correctas", 0)
     errores = request.session.get("errores", [])
     return render(request, "inicio/resultado_quiz.html", {

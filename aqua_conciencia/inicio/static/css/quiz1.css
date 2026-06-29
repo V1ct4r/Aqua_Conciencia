@@ -10,8 +10,22 @@
 }
 
 body{
+    
     min-height:100vh;
-    background:linear-gradient(135deg,#35c6eb,#63d9f5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-family:Georgia, serif;
+
+    background: radial-gradient(
+        circle,
+        #7fd4d6 0%,
+        #5aaeb0 50%,
+        #356f72 100%
+    );
+
+    padding:40px;
 }
 
 .contenedor{

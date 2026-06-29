@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">       <!-- Se introduce codigo para que la pagina sea capas de adaptarse a todo tipos de dispositivos (laptop, celulares, tablet, etc.) -->
     <title>Restablecer Contraseña - Aqua Conciencia</title>
 
-    <link rel="stylesheet" href="{% static 'css/creacion_cuenta.css' %}">        <!-- Se establece el link de este archivo, al archivo de css llamdo 'restablecer_contraseña.css' para poder editar este archivo desde 'restablecer_contraseña.css' -->
+    <link rel="stylesheet" href="{% static 'css/creacion_cuenta.css' %}">        <!-- Se establece el link de este archivo, al archivo de css llamdo 'creacion_cuenta.css' para poder editar este archivo desde css -->
 </head>
 
 <body>
@@ -16,33 +16,29 @@
 
         <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia" class="logo">      <!-- Se establece la imagen del logo en la pagina y con el identificador 'logo' para poder editar su posicionamiento-->
 
-        <h1 class="titulo">      <!-- Se establece el identificador 'titulo' para poder editarlo desde el css -->
-            <span class="azul">Aqua</span><br>      <!-- Se establce el color azul para 'Aqua' -->
-            <span class="verde">Conciencia</span>       <!-- Se establece el color verde para 'Conciencia' -->
-        </h1>
+        <img src="{% static 'css/image 1.png' %}" alt="Aqua Conciencia" style="display:block; margin:0 auto 20px; width:220px;">
 
         <h2>Restablecer Contraseña</h2>     <!-- Se introduce texto 'Restablecer contraseña' en grande y en negrita -->
 
         <p style="text-align:center; margin-bottom:25px;">
-            Ingresa el correo electrónico asociado 
-        a tu cuenta.                                    <!--- Se introduce el texto ' Ingresa el correo electrónico asociado a tu cuenta.  Recibirás un enlace para crear una nueva contraseña.' texto mas pequeño comparado al texto 'Restablecer contraseña' y sin estar en negrita -->
-            Recibirás un enlace para crear una 
-        nueva contraseña.
+            Ingresa tu correo para recibir el enlace de restablecimiento.
         </p>
 
-        <form method="POST">
+        <!-- 🔥 IMPORTANTE: ESTE FORM ES EL CORRECTO PARA DJANGO -->
+        <form method="POST" action="{% url 'restablecer' %}">
             {% csrf_token %}
 
             <label>Correo Electrónico</label>
-           
-            <!-- Se establece que el usuario ingrese su correo electronico, dandole el ejemplo de como deberia ser (aquaconciencia@example.com), y con el 'type = email' se 'obliga' al usuario a poner un correo -->
+
+            <!-- Usamos "correo" porque tu vista espera ese campo -->
             <input          
                 type="email"
                 name="correo"                              
                 placeholder="aquaconciencia@example.com"
                 required
             >
-            <!-- Boton de 'continuar' siempre cuando se hayan cumplido los parametros anteriores -->
+
+            <!-- Boton de 'continuar' -->
             <button type="submit" class="btn-crear">
                 Continuar
             </button>
