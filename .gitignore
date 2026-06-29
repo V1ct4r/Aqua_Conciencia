@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 __pycache__/
 *.pyc
 *.pyo
 db.sqlite3
 venv/
 *.env
+=======
+_pycache_/
+*.pyc
+db.sqlite3
+venv/
+>>>>>>> 81bd1e463dfb5f7e07ecdd05624fa744873f8066
