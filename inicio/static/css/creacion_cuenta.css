@@ -1,5 +1,16 @@
 body{
-    background:#33d9ff !important;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Georgia, serif;
+    background: radial-gradient(
+        circle,
+        #7fd4d6 0%,
+        #5aaeb0 50%,
+        #356f72 100%
+    );
+    padding:40px;
 }
 
 
@@ -29,13 +40,7 @@ font-family:Arial, sans-serif;
     user-select: none;
 }
 
-body{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:#2fd8ff;
-}
+
 
 .registro-card{
 width:760px;

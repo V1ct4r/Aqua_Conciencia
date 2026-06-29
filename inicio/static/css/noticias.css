@@ -5,21 +5,17 @@
 }
 
 body{
-    
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-
     font-family:Georgia, serif;
-
     background: radial-gradient(
         circle,
         #7fd4d6 0%,
         #5aaeb0 50%,
         #356f72 100%
     );
-
     padding:40px;
 }
 

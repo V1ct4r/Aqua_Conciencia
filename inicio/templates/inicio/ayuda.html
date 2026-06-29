@@ -11,14 +11,111 @@
 </head>
 
 <body>       
-    <div class="login-container">
 
-        <div class="logo-area">
-            <img src="{% static 'css/logo.png' %}" alt="Logo AquaConciencia" class="logo">
-            <img src="{% static 'css/titulo.png' %}" alt="Aqua Conciencia" class="logo-titulo">
+    <!-- ===========================
+         Contenedor principal
+    ============================ -->
+    <div class="contenedor">
+
+        <!-- ===========================
+             Barra superior
+        ============================ -->
+        <div class="barra-superior">
+
+            <!-- Logo y título -->
+            <div class="logo-area">
+                <img src="{% static 'css/logo.png' %}" 
+                     alt="Logo AquaConciencia" 
+                     class="logo">
+
+                <img src="{% static 'css/titulo.png' %}" 
+                     alt="Aqua Conciencia" 
+                     class="logo-titulo">
+            </div>
+
+            <!-- Menú superior -->
+            <div class="menu-superior">
+                <button>Mapa</button>
+                <button>Quiz</button>
+                <button>Curiosidades</button>
+                <button>Ayuda</button>
+            </div>
+
+            <!-- Iconos de casa y usuario -->
+            <div class="iconos">
+                <img src="{% static 'css/logo.casa.png' %}" 
+                     alt="Inicio" 
+                     class="icono">
+
+                <img src="{% static 'css/logo.usuario.png' %}" 
+                     alt="Usuario" 
+                     class="icono">
+            </div>
+
         </div>
+        <!-- Fin barra superior -->
+
+        <!-- ===========================
+             Contenido principal
+        ============================ -->
+        <div class="contenido">
+
+            <!-- Menú lateral -->
+            <div class="menu-lateral">
+                <button>Configuración</button>
+                <button>Cómo Jugar</button>
+            </div>
+
+            <!-- ===========================
+                 Panel central
+            ============================ -->
+            <div class="panel">
+
+                <!-- Título principal -->
+                <h2>Cómo Jugar</h2>
+
+                <!-- Contenedor de pasos -->
+                <div class="como-jugar">
+
+                    <!-- Paso 1 -->
+                    <div class="paso">
+                        <h3>1. Elija el quiz</h3>
+                        <p>
+                            Seleccione el quiz que desea realizar 
+                            desde el menú principal.
+                        </p>
+                    </div>
+
+                    <!-- Paso 2 -->
+                    <div class="paso">
+                        <h3>2. Conteste las preguntas</h3>
+                        <p>
+                            Responda cada una de las preguntas 
+                            que aparecen en el quiz.
+                        </p>
+                    </div>
+
+                    <!-- Paso 3 -->
+                    <div class="paso">
+                        <h3>3. Analice el resultado</h3>
+                        <p>
+                            Revise el resultado de su quiz 
+                            y luego elija otro para continuar.
+                        </p>
+                    </div>
+
+                </div>
+                <!-- Fin contenedor de pasos -->
+
+            </div>
+            <!-- Fin panel central -->
+
+        </div>
+        <!-- Fin contenido principal -->
 
     </div>
+    <!-- Fin contenedor principal -->
+
 </body>
 
-</html>    
+</html>

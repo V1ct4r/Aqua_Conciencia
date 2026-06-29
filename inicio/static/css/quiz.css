@@ -1,120 +1,207 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-background:#39c7e8;
-padding:20px;
-min-height:100vh;
+    
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-family:Georgia, serif;
+
+    background: radial-gradient(
+        circle,
+        #7fd4d6 0%,
+        #5aaeb0 50%,
+        #356f72 100%
+    );
+
+    padding:40px;
+}
+.contenedor {
+    width:95%;
+    max-width:1300px;
+    padding:40px;
+    border: 4px solid black;   /* borde negro más grueso */
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
-.contenedor{
-max-width:1400px;
-margin:auto;
-background:#46d4f2;
-padding:30px;
-border-radius:20px;
-border:2px solid black;
+
+/* ENCABEZADO */
+
+.encabezado{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:60px;
 }
 
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:40px;
-}
+/* LOGO */
 
 .logo{
-display:flex;
-align-items:center;
-gap:15px;
+    display:flex;
+    align-items:center;
+    gap:15px;
 }
 
-.logo img{
-width:120px;
+.logo-icono{
+    width:70px;
 }
 
-.texto-logo{
-color:#0050a0;
+.logo-texto{
+    width:220px;
 }
 
-.menu{
-background:#005db5;
-padding:15px 30px;
-border-radius:12px;
-display:flex;
-gap:25px;
-border:2px solid black;
+/* MENU */
+
+.menu {
+    display:flex;
+    gap:15px;
+    background:#0b57b7;
+    padding:15px;
+    border-radius:18px;
+
+    /* borde negro */
+    border: 3px solid black;
 }
 
-.menu a{
-background:#8adf43;
-padding:10px 25px;
-border-radius:10px;
-text-decoration:none;
-color:white;
-font-weight:bold;
-border:2px solid black;
+
+.menu a {
+    background:#c6f43a;
+    color:black;
+    text-decoration:none;
+    padding:12px 30px;
+    border-radius:10px;
+    font-weight:bold;
+    transition:.3s;
+
+    /* borde blanco en cada botón */
+    border: 2px solid white;
 }
+
+.menu a:hover{
+    transform:scale(1.05);
+}
+
+/* ICONOS */
 
 .iconos{
-display:flex;
-gap:15px;
+    display:flex;
+    gap:20px;
 }
 
-.iconos img{
-width:55px;
-height:55px;
-background:white;
-border-radius:50%;
-padding:8px;
-border:2px solid black;
+.icono {
+    width: 50px;              /* más grandes (antes 40px) */
+    filter: drop-shadow(2px 2px 4px black); /* sombra para destacar */
+    transition:.3s;
 }
 
-.panel-quiz{
-max-width:900px;
-margin:auto;
-background:#005db5;
-padding:50px;
-border-radius:20px;
-border:2px solid black;
+.icono:hover {
+    transform: scale(1.2);    /* agrandar un poco al pasar el mouse */
 }
 
-.grid-quizzes{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:35px;
+
+/* PANEL */
+
+.panel {
+    width:700px;
+    margin:auto;
+    background:#0b57b7;
+    border-radius:20px;
+    padding:35px;
+
+    /* borde negro */
+    border: 3px solid black;
 }
 
-.quiz-btn{
-background:#8adf43;
-color:white;
-text-decoration:none;
-text-align:center;
-padding:15px;
-border-radius:10px;
-font-weight:bold;
-border:2px solid black;
+
+/* QUIZZES */
+
+.quices{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
 }
+
+.quiz-link {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#c6f43a;
+    color:black;
+    text-decoration:none;
+    font-weight:bold;
+    height:55px;
+    border-radius:12px;
+    transition:.3s;
+
+    /* borde blanco */
+    border: 2px solid white;
+}
+
+
+.quiz-link:hover{
+    transform:scale(1.05);
+}
+
+/* PROGRESO */
 
 .progreso{
-margin-top:50px;
-display:flex;
-align-items:center;
-gap:30px;
+    display:flex;
+    align-items:center;
+    gap:25px;
+    margin-top:40px;
 }
 
 .circulo{
-width:80px;
-height:80px;
-border-radius:50%;
-border:10px solid #8adf43;
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    border:8px solid #c6f43a;
 }
 
 .texto-progreso{
-color:white;
-font-weight:bold;
+    color:white;
+}
+
+.texto-progreso h3{
+    font-size:22px;
+    margin:5px 0;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .encabezado{
+        flex-direction:column;
+        gap:25px;
+    }
+
+    .panel{
+        width:100%;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .quices{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:500px){
+
+    .quices{
+        grid-template-columns:1fr;
+    }
+
 }
