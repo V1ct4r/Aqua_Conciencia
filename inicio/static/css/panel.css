@@ -110,9 +110,9 @@ header{
     width:55px;
     height:55px;
     object-fit:contain;
-    background:none;     /* sin fondo blanco */
-    border-radius:0;     /* sin círculo */
-    padding:0;           /* sin espacio extra */
+    background:none;     
+    border-radius:0;    
+    padding:0;           
     cursor:pointer;
     transition:0.3s;
 }
@@ -121,14 +121,14 @@ header{
     transform:scale(1.1);
 }
 
-/* DASHBOARD */
+
 
 .dashboard{
     display:flex;
     gap:25px;
 }
 
-/* IZQUIERDA */
+
 
 .principal{
     flex:4;
@@ -217,7 +217,7 @@ header{
     font-weight:bold;
 }
 
-/* INFORMACIÓN */
+/* INFORMACIÓN */ 
 
 .info{
     background:#005db5;

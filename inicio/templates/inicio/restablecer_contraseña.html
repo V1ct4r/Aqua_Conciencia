@@ -14,24 +14,23 @@
 
     <div class="registro-card">
 
-       <!-- Cambia esto -->
-<img src="{% static 'css/image 1.png' %}" alt="Aqua Conciencia" style="display:block; margin:0 auto 20px; width:220px;">
+       
+<img src="{% static 'css/titulo.png' %}" alt="Aqua Conciencia" style="display:block; margin:0 auto 20px; width:220px;">
 
-<!-- Por esto -->
-<img src="{% static 'css/logo2.png' %}" alt="Aqua Conciencia" style="display:block; margin:0 auto 20px; width:220px;">
+
+<img src="{% static '/logo.png' %}" alt="Aqua Conciencia" style="display:block; margin:0 auto 20px; width:220px;">
         <h2>Restablecer Contraseña</h2>     <!-- Se introduce texto 'Restablecer contraseña' en grande y en negrita -->
 
         <p style="text-align:center; margin-bottom:25px;">
             Ingresa tu correo para recibir el enlace de restablecimiento.
         </p>
 
-        <!-- 🔥 IMPORTANTE: ESTE FORM ES EL CORRECTO PARA DJANGO -->
+      
         <form method="POST" action="{% url 'restablecer' %}">
             {% csrf_token %}
 
             <label>Correo Electrónico</label>
 
-            <!-- Usamos "correo" porque tu vista espera ese campo -->
             <input          
                 type="email"
                 name="correo"                              

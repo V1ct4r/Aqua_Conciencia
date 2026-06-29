@@ -15,9 +15,7 @@
 
     <header>
         <div class="logo">  
-            <!-- Logo original -->
-            <img src="{% static 'css/logo.png' %}" alt="Logo AquaConciencia">
-            <!-- Nuevo logo adicional, alineado a la derecha -->
+            <img src="{% static '/logo.png' %}" alt="Logo AquaConciencia">
             <img src="{% static 'css/image 1.png' %}" alt="Logo Alternativo AquaConciencia">
         </div>
 
@@ -48,7 +46,7 @@
                     <img src="{% static 'css/logo.usuario.png' %}" alt="">
                 </div>
                 <div class="nombre-box">
-                    Angel_example
+                    {{ usuario.username }}
                 </div>
             </div>
 
@@ -58,9 +56,9 @@
                 <h3>Información de la cuenta</h3>
 
                 <p><strong>Correo electrónico</strong></p>
-                <input type="text" value="aquaconciencia@example.com" readonly>
+                <input type="text" value="{{ usuario.email }}" readonly>
 
-                <!-- Contador dinámico -->
+             
                 <div class="tiempo-activo">
                     <h3>Tiempo activo en la cuenta:</h3>
                     <span id="contador">00:00:00</span>
@@ -68,18 +66,14 @@
             </div>
 
             <div class="acciones">
-    <!-- Botón para cerrar sesión -->
+   
     <form method="post" action="{% url 'logout_usuario' %}">
         {% csrf_token %}
         <button type="submit" class="btn-verde">Cerrar sesión</button>
     </form>
 
-    <!-- Botón para borrar cuenta -->
-    <form method="post" action="{% url 'borrar_cuenta' %}" 
-          onsubmit="return confirm('¿Estás seguro de que quieres borrar tu cuenta?');">
-        {% csrf_token %}
-        <button type="submit" class="btn-verde">Borrar cuenta</button>
-    </form>
+<a href="{% url 'borrar_cuenta' %}" class="btn-verde">Borrar cuenta</a>
+</form>
 </div>
 
         </div>

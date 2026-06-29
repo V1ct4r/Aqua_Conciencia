@@ -10,21 +10,15 @@
     <link rel="stylesheet" href="{% static 'css/comuna_castro_mapa.css' %}">
 </head>
 
-<body>       
+<body>        
 
-    <!-- ===========================
-         Contenedor principal
-    ============================ -->
+
     <div class="contenedor">
 
-        <!-- ===========================
-             Barra superior
-        ============================ -->
         <div class="barra-superior">
 
-            <!-- Logo y título -->
             <div class="logo-area">
-                <img src="{% static 'css/logo.png' %}" 
+                <img src="{% static '/logo.png' %}" 
                      alt="Logo AquaConciencia" 
                      class="logo">
 
@@ -33,48 +27,26 @@
                      class="logo-titulo">
             </div>
 
-            <!-- Menú superior -->
-            <div class="menu-superior">
-                <button>Mapa</button>
-                <button>Quiz</button>
-                <button>Curiosidades</button>
-                <button>Ayuda</button>
-            </div>
 
-            <!-- Iconos de casa y usuario -->
-            <div class="iconos">
-                <img src="{% static 'css/logo.casa.png' %}" 
-                     alt="Inicio" 
-                     class="icono">
-
-                <img src="{% static 'css/logo.usuario.png' %}" 
-                     alt="Usuario" 
-                     class="icono">
-            </div>
+            <div class="iconos"> 
+            <a href="{% url 'panel' %}">
+                <img src="{% static 'css/logo.casa.png' %}" alt="Inicio">
+            </a>
+            <a href="{% url 'perfil' %}">
+                <img src="{% static 'css/logo.usuario.png' %}" alt="Usuario">
+            </a>
+        </div>
 
         </div>
-        <!-- Fin barra superior -->
 
-        <!-- ===========================
-             Contenido principal
-        ============================ -->
         <div class="contenido">
 
-            <!-- Menú lateral -->
-            <div class="menu-lateral">
-                <button>Configuración</button>
-                <button>Cómo Jugar</button>
-            </div>
-
-            <!-- ===========================
-                 Panel central
-            ============================ -->
             <div class="panel">
 
                 <!-- Título principal -->
                 <h2>Cómo Jugar</h2>
 
-                <!-- Contenedor de pasos -->
+         
                 <div class="como-jugar">
 
                     <!-- Paso 1 -->
@@ -105,16 +77,15 @@
                     </div>
 
                 </div>
-                <!-- Fin contenedor de pasos -->
 
             </div>
-            <!-- Fin panel central -->
+     
 
         </div>
-        <!-- Fin contenido principal -->
+    
 
     </div>
-    <!-- Fin contenedor principal -->
+ 
 
 </body>
 

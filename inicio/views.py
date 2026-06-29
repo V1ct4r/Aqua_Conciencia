@@ -94,6 +94,9 @@ def ayuda(request):
 def perfil(request):
     return render(request, 'inicio/perfil.html')
 
+def perfil(request):
+    return render(request, 'inicio/perfil.html', {'usuario': request.user})
+
 def configuracion(request):
     return render(request, 'inicio/configuracion.html')
 
@@ -106,9 +109,6 @@ def quiz(request):
         "completados": completados,
         "progreso": progreso,
     })
-# =========================
-# FUNCIÓN AUXILIAR PARA QUIZ
-# =========================
 
 def manejar_quiz(request, preguntas, numero, resultado_url, template):
     total = len(preguntas)
