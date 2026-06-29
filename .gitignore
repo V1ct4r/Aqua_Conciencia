@@ -1,4 +1,4 @@
-__pycache__/
-*-_pyc
-*.pyo
-*.pyd
+_pycache_/
+*.pyc
+db.sqlite3
+venv/
