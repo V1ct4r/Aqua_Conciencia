@@ -14,15 +14,15 @@
 <div class="contenedor">
 
     <header>
-        <div class="logo">
+        <div class="logo"> 
             <img src="{% static 'logo.png' %}" alt="Logo AquaConciencia">
             <img src="{% static 'css/image 1.png' %}" alt="Logo AquaConciencia Alternativo">
         </div>
 
-        <nav class="menu">
-            <a href="{% url 'panel' %}">Mapa</a>
+        <nav class="menu"> 
             <a href="{% url 'quiz_inicio' %}">Quiz</a>
             <a href="{% url 'ayuda' %}">Ayuda</a>
+              <a href="{% url 'noticias' %}">Noticias</a>
         </nav>
 
         <div class="iconos">
@@ -43,17 +43,13 @@
 
                 <!-- Puntos clickeables -->
                 <a href="{% url 'comuna' 'ancud' %}" class="punto-comuna" style="top:24.5%; left:44%;"></a>
-                <a href="{% url 'comuna' 'quemchi' %}" class="punto-comuna" style="top:35.5%; left:68.1%;"></a>
+                <a href="{% url 'comuna' 'quemchi' %}" class="punto-comuna" style="top:35.3%; left:68.1%;"></a>
                 <a href="{% url 'comuna' 'dalcahue' %}" class="punto-comuna" style="top:51.5%; left:31.1%;"></a>
                 <a href="{% url 'comuna' 'castro' %}" class="punto-comuna" style="top:61%; left:50.8%;"></a>
                 <a href="{% url 'comuna' 'chonchi' %}" class="punto-comuna" style="top:75.6%; left:37.2%;"></a>
                 <a href="{% url 'comuna' 'quellon' %}" class="punto-comuna" style="top:91%; left:52.1%;"></a>
             </div> 
 
-            <div class="accesos">
-                <a href="{% url 'noticias' %}" class="acceso">Noticias</a>
-                <a href="#" class="acceso">Actividades</a>
-            </div>
         </div>
 
         <div class="sidebar">

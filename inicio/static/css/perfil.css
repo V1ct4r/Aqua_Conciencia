@@ -24,15 +24,15 @@ body{
 }
 
 .contenedor {
-    max-width: 1400px;
+    max-width: 1600px;
     margin: auto;
     background: radial-gradient(
         circle,
         #7fd4d6 0%,
         #5aaeb0 50%,
         #356f72 100%
-    );   /* degradado igual al body */
-    padding: 25px;
+    ); 
+    padding: 40px;
     border-radius: 20px;
     border: 2px solid black;
 }
@@ -43,13 +43,13 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin-bottom:25px;
+margin-bottom:20px;
 }
 
 .logo{
 display:flex;
 align-items:center;
-gap:15px;
+gap:10px;
 }
 
 .logo img{
@@ -152,6 +152,7 @@ border-radius:12px;
 font-size:30px;
 font-weight:bold;
 border:2px solid black;
+min-width: 400px;
 }
 
 hr{
